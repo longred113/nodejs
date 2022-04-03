@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
+const session = require('express-session');
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,6 +21,12 @@ app.use(methodOverride(function (req, res) {
     }
 }));
 
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+}));
+
 app.get('/', (req, res, next) => {
     res.render('index');
 })
@@ -31,7 +38,8 @@ app.get('/404', (req, res) => {
 });
 
 require ('./app/routes/todo.route')(app);
-
+require ('./app/routes/auth.route')(app);
+require ('./app/routes/web.route')(app);
 app.listen(3000, function(){
     console.log('Server running: http//localhost:3000');
 });
