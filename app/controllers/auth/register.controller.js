@@ -1,6 +1,7 @@
 const User = require('../../models/user.model');
 const bcrypt = require('bcrypt');
 require('dotenv/config');
+const mailer = require('../../utils/mailer');
 
 exports.create = (req, res) => {
     res.render('auth/register');

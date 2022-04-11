@@ -1,12 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex">
+	<title>Dự án khu đô thị GoldMark City</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="shortcut icon" href="/img/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+	<link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	 <link rel="stylesheet" href="/css/main.css">
 </head>
+<a id="top"></a>
+
 <body>
-    Hello <%= user.name %>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<a class="navbar-brand" href="/home">GoldMark City</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+			 aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+
+				<div class="menu nav navbar-nav">
+					<li class="visited">
+						<a href="/home">Trang Chủ</a>
+					</li>
+					<li>
+						<a href="#feature">Tiện Ích</a>
+					</li>
+					<li>
+						<a href="#model">Căn Hộ Mẫu</a>
+					</li>
+					<li>
+						<a href="#project">Dự Án</a>
+					</li>
+					<li>
+						<a href="#employ">Nhân Viên</a>
+					</li>
+					<li>
+						<a href="news.html">Tin Tức</a>
+					</li>
+					<li>
+						<a href="#contact">Liên Hệ</a>
+					</li>
+				</div>
+				<div class="navbar-nav ml-auto">
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
+						<div class="dropdown-menu">
+							<a href="" class="dropdown-item">Hello <%= user.name %></a>
+							<a href="/logout" class="dropdown-item">Đăng xuất</a>
+						</div>
+					</div>
+				</div>
+				<!--<ul class="menu nav navbar-nav text-uppercase ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Trang Chủ
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Dịch Vụ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Giới Thiệu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Liên Hệ</a>
+					</li>
+				</ul>-->
+			</div>
+		</nav>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="night position-relative">
+				<div id="carouselId" class="carousel slide" data-ride="carousel">
+
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<img class="d-block img-fluid" src="/img/bg-5.jpg" alt="First slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid" src="/img/bg-4.jpg" alt="Second slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid" src="/img/bg-3.jpg" alt="Third slide">
+						</div>
+
+					</div>
+					<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<div class="col-12 abc">
+					<h1>CĂN HỘ CHUNG CƯ GOLDMARK CITY</h1>
+					<p>GIÁ TỐT NHẤT KHU QUẬN 7 CHỈ TỪ 26 TRIỆU/m
+						<sup>2</sup>
+					</p>
+					<a href="#" class="btn-slide btn btn-dark rounded-0 mt-2" role="button">Xem Thêm</a>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- row 1 -->
+		<div class="row">
+			<div class="col-sm-12 text-center bg-grey p-5">
+				<div class="wow animated swing animated">
+					<div class="title-middle">CHÀO MỪNG ĐẾN VỚI
+						<span>GOLDMARK CITY</span>
+					</div>
+					<div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">Một tuyệt tác bên sông Sài Gòn, sự kết hợp hài hoà giữ kiến trúc và thiên nhiên, mang lại cuộc sống vẹn toàn, đầy tiện
+						ích.
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="container">
+		<!-- end row 1 -->
+
+		<!-- row 2 -->
+		<div class="row service-part mx-auto">
+			<div class="col-sm-12 service">
+				<div id="feature" class="title-service">TIỆN ÍCH NỘI KHU</div>
+				<span class="col-line"></span>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="0.3s">
+					<i class="fa fa-child"></i>
+					<h4>Khu vui chơi trẻ em</h4>
+					<p>Khu vui chơi của trẻ em rộng 5000Ha, thoáng mát với nhiều cây xanh, sạch sẽ</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="0.6s">
+					<i class="fa fa-soccer-ball-o"></i>
+					<h4>Khu thể thao đa năng</h4>
+					<p>Hệ thống phòng gym với 10 tầng, trang bị các thiết bị tối tân nhất được nhập khẩu từ nước ngoài</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="0.9s">
+					<i class="fa fa-shopping-bag"></i>
+					<h4>Phố thương mại</h4>
+					<p>Luôn có mức giá tốt và giá bình ổn thị trường,</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="1.2s">
+					<i class="fa fa-tree"></i>
+					<h4>Công viên di dạo</h4>
+					<p>Với diện tích 100m2 sẽ cung cấp đủ không khí thoáng cho mọi người ahihi</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="1.5s">
+					<i class="fa fa-life-bouy"></i>
+					<h4>Hồ bơi sang trọng</h4>
+					<p>Hệ thống máy lọc nước hàng đầu thế giới, không dùng chất tẩy</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-xl-4">
+				<div class="box-service mx-auto wow animated fadeInUp animated" data-wow-delay="1.8s">
+					<i class="fa fa-envira"></i>
+					<h4>Vườn trên không</h4>
+					<p>Khu vực được trồng trên những lớp lưới mỏng đến mức không thể nhìn thấy được nếu không tập trung</p>
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- end row 2 -->
+
+
+		<!-- row 3-->
+		<div class="row featured">
+			<div class="col-sm-12 featured">
+				<div id="model" class="title-featured">MẪU CĂN HỘ</div>
+				<span class="col-line"></span>
+			</div>
+
+			<div class="col-md-4">
+				<div class="border-custom wow animated fadeInUp animated" data-wow-delay="0.5s">
+					<div class="box-featured">
+						<a href="#">
+							<img src="img/nhamau_5.png" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<p class="text-custom">
+						<strong>Phòng Khách</strong>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="border-custom wow animated fadeInUp animated" data-wow-delay="1s">
+					<div class="box-featured">
+						<a href="#">
+							<img src="img/BEP.png" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<p class="text-custom">
+						<strong>Nhà Bếp</strong>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="border-custom wow animated fadeInUp animated" data-wow-delay="1.5s">
+					<div class="box-featured">
+						<a href="#">
+							<img src="img/NGU.png" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<p class="text-custom">
+						<strong>Phòng Ngủ</strong>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-12 text-center">
+				<a class="btn btn-custom px-4 py-2 my-3" href="#">
+					<b>XEM TẤT CẢ CÁC MẪU</b>
+				</a>
+			</div>
+		</div>
+		<!-- end row 3 -->
+
+
+		<!-- row 4-->
+		<div class="row job">
+			<div class="col-sm-12 job">
+				<div id="project" class="title-job">Dự Án Có Gì?</div>
+				<span class="col-line"></span>
+			</div>
+			<div class="col-md-6 wow animated fadeInLeft animated" data-wow-delay="0.5s">
+				<div class="row what-do-inner">
+					<div class="col-md-9 custom">
+						<span>Không gian và tầm nhìn</span>
+						<p>Tất cả các căn hộ Q7 được thiết kế tối ưu không gian mở, các căn đều có tầm view xa bao quát thành phố từ nhiều hướng.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fa fa-street-view"></i>
+
+					</div>
+				</div>
+
+				<div class="row what-do-inner">
+					<div class="col-md-9 custom">
+						<span>Phòng ngủ</span>
+						<p>Các phòng ngủ trong mỗi căn hộ đều có cửa sổ lớn, hướng ra không gian ngoài trời đón ánh sáng, gió tự nhiên giúp căn
+							hộ luôn thông thoáng, mát mẻ.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fa fa-hotel"></i>
+					</div>
+				</div>
+
+				<div class="row what-do-inner">
+					<div class="col-md-9 custom">
+						<span>Khu bếp</span>
+						<p>Khu bếp và phòng khách được tách riêng biệt và có sân phơi riêng.</p>
+					</div>
+					<div class="col-md-3">
+						<i class="fa fa-fire"></i>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 wow animated fadeInRight animated" data-wow-delay="0.5s">
+				<div class="row what-do-inner">
+					<div class="col-md-3">
+						<i class="fa fa-coffee"></i>
+					</div>
+					<div class="col-md-9 custom">
+						<span>Phòng khách</span>
+						<p>Khu phòng khách được thiết kế nối với khu bàn ăn, có ban công riêng, giúp tối ưu diện tích và thuận tiện trong sinh
+							hoạt..
+						</p>
+					</div>
+
+				</div>
+
+				<div class="row what-do-inner">
+					<div class="col-md-3">
+						<i class="fa fa-expand"></i>
+					</div>
+					<div class="col-md-9 custom">
+						<span>Tiện ích</span>
+						<p>Hơn 50 tiện ích nội khu được chăm chút kỹ lưỡng từng chi tiết để đem đến chất lượng sống hài hoà và đẳng cấp nhất.</p>
+					</div>
+
+				</div>
+
+				<div class="row what-do-inner">
+					<div class="col-md-3">
+						<i class="fa fa-location-arrow"></i>
+					</div>
+					<div class="col-md-9 custom">
+						<span>Vị trí</span>
+						<p>Nằm trên đường Đào Trí, được quy hoạch mở rộng lộ giới 40m để phát triển các dự án nhà ở, trung tâm tài chính, thương
+							mại.
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+		<!-- end row 4 -->
+
+		<!-- row 5 -->
+		<div class="row">
+			<div class="col-sm-12 team">
+				<div id="employ" class="title-team">Thành Viên Của Công Ty</div>
+				<span class="col-line"></span>
+			</div>
+
+			<div class="col-md-6 col-xl-3 pic wow animated fadeInLeft animated" data-wow-delay="0.5s">
+
+				<img src="img/liem.jpg" class="img-fluid rounded-circle">
+				<p>
+					<h5>Phạm Thanh Liêm</h5>
+				</p>
+				<p>
+					<h6>Seller</h6>
+				</p>
+				<p>Nhân viên bán hàng</p>
+				<ul>
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-skype"></i>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-6 col-xl-3 pic wow animated fadeInUp animated" data-wow-delay="1s">
+				<img src="img/tuananh.jpg" class="img-fluid rounded-circle">
+				<p>
+					<h5>Phạm Tuấn Anh</h5>
+				</p>
+				<p>
+					<h6>Seller</h6>
+				</p>
+				<p>Nhân viên bán hàng</p>
+				<ul>
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-skype"></i>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-6 col-xl-3 pic wow animated fadeInDown animated" data-wow-delay="1.5s">
+				<img src="img/tu.jpg" class="img-fluid rounded-circle">
+				<p>
+					<h5>Nguyễn Tấn Phan Tú</h5>
+				</p>
+				<p>
+					<h6>Unknow</h6>
+				</p>
+				<p>Chưa Rõ!!</p>
+				<ul>
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-skype"></i>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-6 col-xl-3 pic wow animated fadeInRight animated" data-wow-delay="2s">
+				<img src="img/quy.jpg" class="img-fluid rounded-circle">
+				<p>
+					<h5>Nguyễn Phú Quý</h5>
+				</p>
+				<p>
+					<h6>Cò </h6>
+				</p>
+				<p>Chưa Rõ Ahihi!</p>
+				<ul>
+					<li>
+						<a href="#">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-skype"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end row 5 -->
+		<!-- row 6 -->
+	</div>
+	<div class="container-fluid">
+		<div class="row mt-5 counter bg-grey wow animated fadeInLeft animated" data-wow-delay="2.5s">
+			<div class="col-sm-3 text-counter">
+				<h1 class="count">72000</h1>
+				<h5>Số Giờ Hoạt Động</h5>
+			</div>
+
+			<div class="col-sm-3 text-counter">
+				<h1 class="count">2000</h1>
+				<h5>Giải Thưởng</h5>
+			</div>
+			<div class="col-sm-3 text-counter">
+				<h1 class="count">7500</h1>
+				<h5>Khách Hàng Hài Lòng</h5>
+			</div>
+
+			<div class="col-sm-3 text-counter">
+				<h1 class="count">7500</h1>
+				<h5>Dự Án Đã Hoàn Thành</h5>
+			</div>
+		</div>
+		<!-- end row 6 -->
+	</div>
+	<!--end container-fluid-->
+	<div class="container mt-4">
+		<!--row 7-->
+		<div class="row stories-part wow animated fadeInUp animated" data-wow-delay="0.5s">
+			<div class="col-sm-12 stories">
+				<div id="news" class="title-stories">Tin Tức</div>
+				<span class="col-line"></span>
+			</div>
+			<div class="col-lg-4">
+				<div class="latest-news-wrapper">
+					<div class="box-featured1">
+						<a href="blog-post.html" class="img-wrapper">
+							<img src="img/biet-thu-hoa-hong-villa-terrasse-des-roses-1.jpg" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-12 latest-news-desc">
+						<h3>MÔ HÌNH NHÀ BIỆT THỰ TẠI GOLDMARK CITY</h3>
+						<span class="l-news-detail">by admin | ngày 16 tháng 4 năm 2018 |</span>
+						<p>
+							Lấy cảm hứng từ các căn biệt thự châu Âu Tân cổ điển, mẫu biệt thự KT16131 đã ra đời sau bao ngày mong mỏi chờ đợi, đạt được
+							vẻ đẹp tiêu chuẩn, hào hoa và trang nhã
+						</p>
+						<p>
+							<a href="blog-post.html" class="btn btn-custom">Xem Thêm..</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="latest-news-wrapper">
+					<div class="box-featured1">
+						<a href="blog-post.html" class="img-wrapper">
+							<img src="img/cong-vien.jpg" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-12 latest-news-desc">
+						<h3>CÔNG VIÊN CÂY XANH ĐANG ĐƯỢC KHỞI CÔNG</h3>
+						<span class="l-news-detail">by admin | ngày 16 tháng 4 năm 2018 |</span>
+						<p>Công viên cây xanh: Với diện tích 20.310 m2, mảng xanh chính là niềm tự hào của dự án. Quảng trường hoa viên chính
+							bố trí giữa khu đô thị là nơi sinh hoạt của người dân ...</p>
+
+						<p>
+							<a href="blog-post.html" class="btn btn-custom">Xem Thêm..</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="latest-news-wrapper">
+					<div class="box-featured1">
+						<a href="blog-post.html" class="img-wrapper">
+							<img src="img/tt.jpg" class="img-fluid zoom">
+							<div class="img-overlay">
+								<p class="more">Xem Thêm</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-12 latest-news-desc">
+						<h3>TRUNG TÂM THƯƠNG MẠI ĐÃ KHÁNH THÀNH</h3>
+						<span class="l-news-detail">by admin | ngày 16 tháng 4 năm 2018 |</span>
+						<p>
+							Trung tâm thương mại Lotte Mart do nhà bán lẻ hàng đầu Hàn Quốc Lotte đầu tư có diện tích hơn 2ha, sẽ là điểm đến đầu tư
+							thương mại.
+						</p>
+						<p>
+							<a href="blog-post.html" class="btn btn-custom">Xem Thêm..</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--latest news row-->
+
+		</div>
+
+
+	</div>
+	<!-- end row 7 -->
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="contact" class="location">
+						<h3>Địa Chỉ Công Ty</h3>
+					</div>
+					<div class="contact-infor">
+						<p>
+							<i class="fa fa-home"></i>381 Nam Kỳ Khởi Nghĩa, Lầu 3 phòng 302 hoặc Lầu 5 phòng 502</p>
+						<p>
+							<i class="fa fa-phone"></i> Quên rùi :D </p>
+						<p>
+							<i class="fa fa-globe"></i> Chưa Dk tên miền :D</p>
+					</div>
+					<div class="follow">
+						<h3>Follow Us</h3>
+						<ul>
+							<li>
+								<a href="#">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<i class="fa fa-google-plus"></i>
+								</a>
+							</li>
+
+							<li></li>
+							<a href="#">
+								<i class="fa fa-pinterest"></i>
+							</a>
+							</li>
+
+							<li>
+								<a href="#">
+									<i class="fa fa-skype"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3>Tin Mới Nhất</h3>
+						</div>
+						<div class="tweet-desc">
+							<p>@1nguoinaodo</p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								Trang web đẹp
+							</p>
+							<p>50 min ago</p>
+
+						</div>
+						<hr>
+						<div class="tweet-desc">
+							<p>@1nguoinaodothu2</p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								Quá chính xác
+							</p>
+							<p>51 min ago</p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3>Liên Hệ</h3>
+						</div>
+						<div class="row">
+
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Tên...">
+							</div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Email...">
+							</div>
+							<div class="col-sm-12 mt-3">
+								<textarea class="form-control" placeholder="Lời nhắn..." rows="6"></textarea>
+							</div>
+							<div class="col-sm-12 mt-3">
+								<button type="submit" class="btn btn-dark">Đăng Ký Nhận Báo Giá</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#top" class="back-to-top" style="display: inline;">
+		<i class="fa fa-chevron-up"> </i>
+	</a>
+	<!-- end footer -->
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	 crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/jquery.animateNumber.js"></script>
+	<script>
+		$('.count').each(function () {
+			$(this).prop('Counter', 0).animate({
+				Counter: $(this).text()
+			}, {
+					duration: 4000,
+					easing: 'swing',
+					step: function (now) {
+						$(this).text(Math.ceil(now));
+					}
+				});
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('a[href^="#"]').on('click', function (e) {
+				e.preventDefault();
+
+				var target = this.hash;
+				var $target = $(target);
+
+				$('html, body').stop().animate({
+					'scrollTop': $target.offset().top
+				}, 900, 'swing', function () {
+					window.location.hash = target;
+				});
+			});
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script>new WOW().init();</script>
+
 </body>
+
 </html>

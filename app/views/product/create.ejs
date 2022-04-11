@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="login-form">
+    <h2>Create new Product</h2>
+
+    <% if (typeof status !== 'undefined') { %>
+        <%if (status == 'success') { %>
+            <div style="color: green;">
+                Created Successfully
+            </div>
+        <% } else { %>
+            <div style="color: red;">
+                Some error occurred while creating the Todo
+            </div>
+        <% } %>
+        <br>
+    <% } %>
+    <form action="/product" method="post" enctype="multipart/form-data">
+        <label for="productName" >Product Name</label>
+        <input type="text" id="productName" name="productName"
+            <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
+        <br> <br>
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price"
+            <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
+        <br> <br>
+        <label for="detail">Details</label>
+        <input type="text" name="detail" id="detail"
+            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required>
+        <br><br>
+        <label for="image">Image</label>
+        <input type="file" name="myFile" accept=""/>
+        <button class="button button1" type="submit">Create</button>
+        <a href="/product"><button class="button button1" type="button">Back</button></a>
+    </form>
+    </div>
+</body>
+</html>

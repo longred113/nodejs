@@ -21,6 +21,8 @@ app.use(methodOverride(function (req, res) {
     }
 }));
 
+app.use(express.static('app/public'));
+
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: true,
@@ -29,6 +31,9 @@ app.use(session({
 
 app.get('/', (req, res, next) => {
     res.render('index');
+})
+app.get('/admin',(req, res, next) => {
+    res.render('adminIndex');
 })
 app.get('/500', (req, res) => {
     res.render('err')
@@ -40,6 +45,9 @@ app.get('/404', (req, res) => {
 require ('./app/routes/todo.route')(app);
 require ('./app/routes/auth.route')(app);
 require ('./app/routes/web.route')(app);
+require ('./app/routes/admin.route')(app);
+require ('./app/routes/product.route')(app);
+require ('./app/routes/category.route')(app);
 app.listen(3000, function(){
     console.log('Server running: http//localhost:3000');
 });
