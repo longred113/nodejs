@@ -11,6 +11,9 @@ module.exports = app => {
     router.get('/adminHome', adminMiddleware.loggedin, (req,res)=>{
         res.render('adminHome');
     })
+    router.get('/news',(req, res)=>{
+        res.render('news');
+    })
 
 
     app.use(router);

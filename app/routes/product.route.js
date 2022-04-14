@@ -6,7 +6,7 @@ const db = require('../models/db');
 var router = require('express').Router();
 
 module.exports = app => {
-    // SET STORAGE
+    // // SET STORAGE
     var storage = multer.diskStorage({
         destination: function (req, file, cb) {
             let path = 'app/public/uploads';
@@ -25,9 +25,13 @@ module.exports = app => {
 
     router.get("/", product.findAll);
     router.get("/create", product.create);
-    router.post("/create", upload.single('myFile'), product.uploadFile)
     router.post("/", product.store);
+    router.get("/edit/:id", product.edit);
+    router.put("/:id", product.update);
+    router.get("/delete/:id", product.delete);
+    router.delete("/delete", product.deleteAll);
     router.get("/image",product.showFrom);
+    router.post("/create", upload.single('myFile'), product.uploadFile);
     router.post("/uploadfile", upload.single('myFile'), product.uploadFile, (req, res) => {
         if (!req.file) {
             console.log("No file upload");

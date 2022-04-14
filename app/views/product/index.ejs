@@ -255,7 +255,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Category table</h6>      
+                <h6 class="text-white text-capitalize ps-3">Product table</h6>      
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -290,24 +290,36 @@
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
-                  <!-- <% product.forEach((item) => {%>
+                  <% product.forEach((item) => {%>
                   <tbody>
                     <tr>
                       <td class="align-middle text-center ">
                         <%= item.id %>
                       </td>
+                      <td>
+
+                      </td>
                       <td class="align-middle text-center ">
-                        <%= item.categoryName %>
+                        <%= item.productName %>
+                      </td>
+                      <td class="align-middle text-center ">
+                        
+                      </td>
+                      <td class="align-middle text-center ">
+                        <%= item.price %> VNĐ
+                      </td>
+                      <td class="align-middle text-center ">
+                        <%= item.detail %>
                       </td>
                       <td class="align-middle">
                         <i class="fas fa-edit" style="font-size:24px"></i>
-                        <a href="/category/edit/<%= item.id %>">Edit</a><br>
+                        <a href="/product/edit/<%= item.id %>">Edit</a><br>
                         <i class="fa fa-remove" style="font-size:24px"></i>
-                        <a href="/category/delete/<%= item.id %>">Delete</a>
+                        <a href="/product/delete/<%= item.id %>">Delete</a>
                       </td>
                     </tr>
                   </tbody>
-                  <% }) %> -->
+                  <% }) %>
                 </table>
               </div>
             </div>

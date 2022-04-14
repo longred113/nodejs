@@ -1,4 +1,3 @@
-const req = require('express/lib/request');
 const Product = require('../../models/product.model');
 
 exports.create = (req, res) => {
@@ -27,9 +26,9 @@ exports.store = (req, res) => {
     const product = new Product({
         productName: req.body.productName,
         price: req.body.price,
-        image: req.body.image,
+        // image: req.body.image,
         detail: req.body.detail,
-        id_category: req.body.id_category,
+        // id_category: req.body.id_category,
         // published: !req.body.published ? false : true
     });
     // Save Product in the database
@@ -47,5 +46,60 @@ exports.findAll = (req, res) => {
         if (err)
             res.redirect('/500')
         else res.render('product/index', {product: data});
+    });
+};
+exports.edit = (req, res) => {
+    res.locals.status = req.query.status;
+
+    Product.findById(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.redirect('/404');
+            } else {
+                res.redirect('/500');
+            }
+        } else res.render('product/edit', { product: data });
+    });
+};
+exports.update = (req, res) => {
+    // Validate Request
+    if (!req.body) {
+        res.redirect('/product/edit/' + req.params.id + '?status=error')
+    }
+    // if (req.body.published == 'on') {
+    //     req.body.published = true;
+    // } else {
+    //     req.body.published = false;
+    // }
+    Product.updateById(
+        req.params.id,
+        new Product(req.body),
+        (err, data) => {
+            if (err) {
+                if (err.kind === "not_found") {
+                    res.redirect('/404');
+                } else {
+                    res.redirect('/500');
+                }
+            } else res.redirect('/product/edit/' + req.params.id + '?status=success');
+        }
+    );
+};
+exports.delete = (req, res) => {
+    Product.remove(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.redirect('/404');
+            } else {
+                res.redirect('/500');
+            }
+        } else res.redirect('/product?deleted=true')
+    });
+};
+exports.deleteAll = (req, res) => {
+    Product.removeAll((err, data) => {
+        if (err)
+            res.redirect('/500');
+        else res.redirect('/product?deleted=true')
     });
 };

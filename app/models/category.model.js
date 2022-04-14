@@ -3,11 +3,7 @@ const sql = require('./db');
 const Category = function(category){
     this.categoryName = category.categoryName;
 }
-// const Admin = function(admin){
-//     this.name = admin.name;
-//     this.password = admin.password;
-//     this.email = admin.email;
-// }
+
 Category.create = (newCategory, result) => {
     sql.query("INSERT INTO category SET ?", newCategory, (err, res) => {
         if (err) {
