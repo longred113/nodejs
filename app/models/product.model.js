@@ -3,9 +3,9 @@ const sql = require('./db');
 const Product = function(product){
     this.productName = product.productName;
     this.price = product.price;
-    // this.image = product.image;
+    this.image = product.image;
     this.detail = product.detail;
-    // this.id_category = product.id_category;
+    this.id_category = product.id_category;
 }
 Product.create = (newProduct, result) => {
     sql.query("INSERT INTO product SET ?", newProduct, (err, res) => {
@@ -53,6 +53,25 @@ Product.updateById = (id, product, result) => {
     sql.query(
         "UPDATE product SET productName = ?, price = ?, detail = ? WHERE id = ?",
         [product.productName,product.price,product.detail, id],
+        (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+                return;
+            }
+            if (res.affectedRows == 0) {
+                // not found todo with the id
+                result({ kind: "not_found" }, null);
+                return;
+            }
+            console.log("updated product: ", { id: id, ...product });
+            result(null, { id: id, ...product });
+        }
+    );
+};
+Product.updateImage = (id, product, result) => {
+    sql.query(
+        "UPDATE product SET image = ? WHERE id = ?",[product.image, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);

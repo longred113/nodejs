@@ -18,7 +18,8 @@ exports.sendResetLinkEmail = (req, res) => {
                     mailer.sendMail(user.email, "Reset password", `<a href="${process.env.APP_URL}/password/reset/${user.email}?token=${hashedEmail}"> Reset Password </a>`)
                     console.log(`${process.env.APP_URL}/password/reset/${user.email}?token=${hashedEmail}`);
                 })
-                res.redirect('/password/reset?status=success')
+                // res.redirect('/password/reset?status=success');
+                res.send('Check Email!!');
             }
         })
     }

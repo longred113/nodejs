@@ -264,8 +264,8 @@
                   <thead>
                       <tr>
                         <td>
-                          <form action="/category" method="get">
-                            <input type="text" name="categoryName" placeholder="Enter productName">
+                          <form action="/product" method="get">
+                            <input type="text" name="productName" placeholder="Enter productName">
                             <button class="button button1" type="submit" >Search</button>
                           </form>
                         <br>
@@ -315,7 +315,9 @@
                         <i class="fas fa-edit" style="font-size:24px"></i>
                         <a href="/product/edit/<%= item.id %>">Edit</a><br>
                         <i class="fa fa-remove" style="font-size:24px"></i>
-                        <a href="/product/delete/<%= item.id %>">Delete</a>
+                        <a href="/product/delete/<%= item.id %>">Delete</a><br>
+                        <i class="fa fa-edit" style="font-size:24px"></i>
+                        <a href="/product/image/<%= item.id %>">Edit Image</a>
                       </td>
                     </tr>
                   </tbody>

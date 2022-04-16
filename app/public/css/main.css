@@ -781,4 +781,19 @@ hr{
 .button1:hover {
   background-color: crimson;
   color: white;
+  text-align: center;
+}
+.button2{
+  background-color: #356596;
+  padding: 5px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #ffffff;
 }

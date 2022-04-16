@@ -6,7 +6,36 @@ exports.create = (req, res) => {
 }
 exports.showFrom = (req, res) =>{
     res.locals.status = req.query.status;
-    res.render('product/image');
+    Product.findById(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.redirect('/404');
+            } else {
+                res.redirect('/500');
+            }
+        } else res.render('product/image', { product: data });
+    });
+}
+exports.fileUpload = (req, res) =>{
+    let sampleFile;
+    let uploadPath;
+
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    // name of the input is sampleFile
+    sampleFile = req.files.sampleFile;
+    uploadPath = __dirname + '/app/public/uploads/' + sampleFile.name;
+
+    console.log(sampleFile);
+
+    // Use mv() to place file on the server
+    sampleFile.mv(uploadPath, function (err) {
+        if (err) return res.status(500).send(err);
+        res.send('File uploaded!');
+    })
+
 }
 exports.uploadFile = (req, res) => {
     const file = req.file
@@ -85,6 +114,24 @@ exports.update = (req, res) => {
         }
     );
 };
+// exports.updateImage = (req, res){
+//     if (!req.body) {
+//         res.redirect('/product/image/' + req.params.id + '?status=error')
+//     }
+//     Product.updateImage(
+//         req.params.id,
+//         new Product(req.body),
+//         (err, data) => {
+//             if (err) {
+//                 if (err.kind === "not_found") {
+//                     res.redirect('/404');
+//                 } else {
+//                     res.redirect('/500');
+//                 }
+//             } else res.redirect('/product/image/' + req.params.id + '?status=success');
+//         }
+//     );
+// };
 exports.delete = (req, res) => {
     Product.remove(req.params.id, (err, data) => {
         if (err) {
