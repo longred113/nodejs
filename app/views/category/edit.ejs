@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Category - <%= category.categoryName %></title>
+    <title>Chỉnh sửa danh mục - <%= category.categoryName %></title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <div class="login-form">
-    <h2>Edit Category</h2>
+    <h2>Chỉnh sửa danh mục</h2>
 
     <% if (typeof status !== 'undefined') { %>
         <%if (status == 'success') { %>
             <div style="color: green;">
-                Updated Successfully
+                Cập nhật danh mục thành công
             </div>
         <% } else { %>
             <div style="color: red;">
-                Some error occurred while editing the Todo
+                Có lỗi xảy ra trong quá trình cập nhật danh mục
             </div>
         <% } %>
         <br>
     <% } %>
     <form action="/category/<%= category.id %>" method="post">
         <input type="hidden" name="_method" value="put">
-        <label for="categoryName">categoryName</label>
+        <label for="categoryName">Tên danh mục</label>
         <input type="text" id="categoryName" name="categoryName" value="<%= category.categoryName %>"
             <% if (typeof categoryName != "undefined" && categoryName) { %> value="<%= categoryName %>"<% } %>required>
         <% if (typeof conflictError != "undefined" && conflictError) { %>
             <div class="text-danger text-left  mb-3"><%= conflictError %></div>
         <% } %>    
         <br> <br>
-        <button class="button button1" type="submit">Update</button>
-        <a href="/category"><button class="button button1" type="button">Back</button></a>
+        <button class="button button1" type="submit">Cập nhật</button>
+        <a href="/category"><button class="button button1" type="button">Trở về</button></a>
     </form>
     </div>
 </body>

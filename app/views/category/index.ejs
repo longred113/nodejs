@@ -62,15 +62,15 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">category</i>
             </div>
-            <span class="nav-link-text ms-1">Category</span>
+            <span class="nav-link-text ms-1">Danh mục</span>
           </a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white " href="/product">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="material-icons opacity-10">inventory_2</i>
+                <i class="far fa-newspaper"></i>
               </div>
-              <span class="nav-link-text ms-1">Product</span>
+              <span class="nav-link-text ms-1">Tin tức</span>
             </a>
           </li>
           <!-- <li class="nav-item">
@@ -113,7 +113,7 @@
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="material-icons opacity-10">logout</i>
               </div>
-              <span class="nav-link-text ms-1">Logout</span>
+              <span class="nav-link-text ms-1">Đăng xuất</span>
             </a>
           </li>
           <!-- <li class="nav-item">
@@ -138,10 +138,10 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tables</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Trang</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh mục</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Tables</h6>
+          <h6 class="font-weight-bolder mb-0">Danh mục</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -255,7 +255,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Category table</h6>      
+                <h6 class="text-white text-capitalize ps-3">Bảng danh mục</h6>      
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -265,24 +265,24 @@
                       <tr>
                         <td>
                           <form action="/category" method="get">
-                            <input type="text" name="categoryName" placeholder="Enter categoryName">
-                            <button class="button button1" type="submit" >Search</button>
+                            <input type="text" name="categoryName" placeholder="Nhập tên danh mục">
+                            <button class="button button1" type="submit" >Tìm kiếm</button>
                           </form>
                         <br>
                         </td>
                         <td class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">
-                            Create new category
+                            Tạo danh mục mới
                         </td>
                         <td class="align-middle">
                           <div>
                           <i class="far fa-edit" style="font-size:24px"></i>
-                          <a href="/category/create ">Create</a>
+                          <a href="/category/create ">Tạo mới</a>
                         </div>
                         </td>
                     </tr>
                     <tr>
                       <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">ID</th>
-                      <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10 ps-2">Category name</th>
+                      <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10 ps-2">Tên danh mục</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -297,9 +297,9 @@
                       </td>
                       <td class="align-middle">
                         <i class="fas fa-edit" style="font-size:24px"></i>
-                        <a href="/category/edit/<%= item.id %>">Edit</a><br>
+                        <a href="/category/edit/<%= item.id %>">Chỉnh sửa</a><br>
                         <i class="fa fa-remove" style="font-size:24px"></i>
-                        <a href="/category/delete/<%= item.id %>">Delete</a>
+                        <a href="/category/delete/<%= item.id %>">Xoá</a>
                       </td>
                     </tr>
                   </tbody>
