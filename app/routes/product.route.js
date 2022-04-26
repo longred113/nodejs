@@ -31,6 +31,7 @@ module.exports = app => {
     router.get("/delete/:id", product.delete);
     router.delete("/delete", product.deleteAll);
     router.get("/image/:id", product.showFrom);
+    router.get("/bds",product.showBDS);
     // router.get("/editImage/:id", product.updateImage);
 // router.post("/create", upload.single('myFile'), product.uploadFile);
 // router.post("/uploadfile", upload.single('myFile'), product.uploadFile, (req, res) => {

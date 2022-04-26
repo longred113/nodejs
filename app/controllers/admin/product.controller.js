@@ -16,6 +16,15 @@ exports.showFrom = (req, res) =>{
         } else res.render('product/image', { product: data });
     });
 }
+exports.showBDS = (req, res)=>{
+    res.locals.deleted = req.query.deleted;
+    const productName = req.query.productName;
+    Product.getAll(productName, (err, data) => {
+        if (err)
+            res.redirect('/500')
+        else res.render('product/bds', {product: data});
+    });
+}
 exports.fileUpload = (req, res) =>{
     let sampleFile;
     let uploadPath;
