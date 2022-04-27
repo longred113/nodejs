@@ -804,3 +804,40 @@ hr{
   height:20px;
   word-wrap:break-word;
 } */
+.register-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.register-form_container{
+ position: relative;
+ margin: 0 auto;
+ width: 70%;
+
+ background-image: url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+padding: 40px 0;
+}
+
+.register-form{
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.register-form h1{
+  width: 100%;
+}
+
+.register-form form input{
+  width: 100%;
+}
