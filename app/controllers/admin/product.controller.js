@@ -4,17 +4,20 @@ exports.create = (req, res) => {
     res.locals.status = req.query.status;
     res.render('product/create');
 }
-exports.showFrom = (req, res) =>{
-    res.locals.status = req.query.status;
-    Product.findById(req.params.id, (err, data) => {
-        if (err) {
-            if (err.kind === "not_found") {
-                res.redirect('/404');
-            } else {
-                res.redirect('/500');
-            }
-        } else res.render('product/image', { product: data });
-    });
+// exports.showFrom = (req, res) =>{
+//     res.locals.status = req.query.status;
+//     Product.findById(req.params.id, (err, data) => {
+//         if (err) {
+//             if (err.kind === "not_found") {
+//                 res.redirect('/404');
+//             } else {
+//                 res.redirect('/500');
+//             }
+//         } else res.render('product/image', { product: data });
+//     });
+// }
+exports.showFrom = (req, res)=>{
+
 }
 exports.showBDS = (req, res)=>{
     res.locals.deleted = req.query.deleted;
