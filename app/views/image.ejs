@@ -8,7 +8,17 @@
 </head>
 <body>
     <form action="/image" encType="multipart/form-data" method="POST">
+        <input type="text" id="productName" name="productName" placeholder="Nhập tiêu đề tin tức"
+            <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
+        <br> <br>
+        <input type="text" name="price" id="price" placeholder="Nhập giá"
+            <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
+        <br> <br>
+        <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
+            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required>
+        <br><br>
         <input type="file" name="sampleFile" accept='image/*'>
+        <br><br>
         <input type="submit" class="btn btn-primary" />
     </form>
 </body>

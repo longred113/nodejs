@@ -8,21 +8,22 @@ exports.create = (req, res) => {
 }
 
 exports.register = (req, res) => {
-    const { email, password, name } = req.body;
+    const { email, password, firstName, lastName } = req.body;
 
-    if (email && password && name) {
+    if (email && password && firstName && lastName) {
         User.findByEmail(email, (err, user) => {
             if (err || user) {
                 // A user with that email address does not exists
                 const conflictError = 'User credentials are exist.';
-                res.render('auth/register', { email, password, name, conflictError });
+                res.render('auth/register', { email, password, firstName, lastName, conflictError });
             }
         })
 
         bcrypt.hash(password, parseInt(process.env.BCRYPT_SALT_ROUND)).then((hashed) => {
             // Create a User
             const user = new User({
-                name: name,
+                firstName: firstName,
+                lastName: lastName,
                 email: email,
                 password: hashed
             });
@@ -39,7 +40,7 @@ exports.register = (req, res) => {
         });
     } else {
         const conflictError = 'User credentials are exist.';
-        res.render('auth/register', { email, password, name, conflictError });
+        res.render('auth/register', { email, password, firstName, lastName, conflictError });
     }
 }
 

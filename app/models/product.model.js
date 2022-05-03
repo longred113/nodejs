@@ -51,8 +51,8 @@ Product.getAll = (productName, result) => {
 };
 Product.updateById = (id, product, result) => {
     sql.query(
-        "UPDATE product SET productName = ?, price = ?, detail = ? WHERE id = ?",
-        [product.productName,product.price,product.detail, id],
+        "UPDATE product SET productName = ?, price = ?, detail = ?,image = ? WHERE id = ?",
+        [product.productName,product.price,product.detail,product.image, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);
@@ -69,25 +69,25 @@ Product.updateById = (id, product, result) => {
         }
     );
 };
-Product.updateImage = (id, product, result) => {
-    sql.query(
-        "UPDATE product SET image = ? WHERE id = ?",[product.image, id],
-        (err, res) => {
-            if (err) {
-                console.log("error: ", err);
-                result(null, err);
-                return;
-            }
-            if (res.affectedRows == 0) {
-                // not found todo with the id
-                result({ kind: "not_found" }, null);
-                return;
-            }
-            console.log("updated product: ", { id: id, ...product });
-            result(null, { id: id, ...product });
-        }
-    );
-};
+// Product.updateImage = (id, product, result) => {
+//     sql.query(
+//         "UPDATE product SET image = ? WHERE id = ?",[product.image, id],
+//         (err, res) => {
+//             if (err) {
+//                 console.log("error: ", err);
+//                 result(null, err);
+//                 return;
+//             }
+//             if (res.affectedRows == 0) {
+//                 // not found todo with the id
+//                 result({ kind: "not_found" }, null);
+//                 return;
+//             }
+//             console.log("updated product: ", { id: id, ...product });
+//             result(null, { id: id, ...product });
+//         }
+//     );
+// };
 Product.remove = (id, result) => {
     sql.query("DELETE FROM product WHERE id = ?", id, (err, res) => {
         if (err) {

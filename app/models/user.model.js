@@ -1,7 +1,8 @@
 const sql = require('./db');
 
 const User = function(user){
-    this.name = user.name;
+    this.firstName = user.firstName;
+    this.lastName = user.lastName;
     this.password = user.password;
     this.email = user.email;
 }

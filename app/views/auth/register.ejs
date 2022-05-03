@@ -14,8 +14,10 @@
         <div class="register-form"> -->
             <h1>Đăng ký người dùng</h1>
             <form action="/register" method="POST">
-                <input type="text" name="name" placeholder="Tên" 
-                    <% if (typeof name != "undefined" && name) { %> value="<%= name %>"<% } %> required>
+                <input type="text" name="firstName" placeholder="Họ" 
+                    <% if (typeof name != "undefined" && name) { %> value="<%= firstName %>"<% } %> required>
+                <input type="text" name="lastName" placeholder="Tên" 
+                    <% if (typeof name != "undefined" && name) { %> value="<%= lastName %>"<% } %> required>    
                 <input type="text" name="email" placeholder="Email" 
                     <% if (typeof email != "undefined" && email) { %> value="<%= email %>"<% } %>  required>
                 <input type="password" name="password" placeholder="Mật khẩu" 
