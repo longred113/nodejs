@@ -53,6 +53,15 @@
 						<a href="#contact">Liên Hệ</a>
 					</li>
 				</ul>
+                <div class="navbar-nav ml-auto">
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản</a>
+						<div class="dropdown-menu">
+							<a href="" class="dropdown-item">Hello </a>
+							<a href="/logout" class="dropdown-item">Đăng xuất</a>
+						</div>
+					</div>
+				</div>
 				<!--<ul class="menu nav navbar-nav text-uppercase ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Trang Chủ
@@ -92,34 +101,38 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="d-flex py-4 flex-wrap">
             <% product.forEach((item) => {%>
-            <div class="col-lg-4">
-                <div class="latest-news-wrapper">
-                    <div class="box-featured1">
-                        <a href="" class="img-wrapper">
-                            <img src="uploads/" class="img-fluid zoom">
-                            <div class="img-overlay">
-                                <p class="more">Xem Thêm</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-12 latest-news-desc">
-                        <h3><%= item.productName %></h3>
-                        <span class="l-news-detail">by admin | ngày 16 tháng 4 năm 2018 |</span>
-                        <p>
-                            Lấy cảm hứng từ các căn biệt thự châu Âu Tân cổ điển, mẫu biệt thự KT16131 đã ra đời sau bao ngày mong mỏi chờ đợi, đạt được
-                            vẻ đẹp tiêu chuẩn, hào hoa và trang nhã
-                        </p>
-                        <p>
-                            <a href="/blog" class="btn btn-custom">Xem Thêm..</a>
-                        </p>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="latest-news-wrapper">
+                        <div class="box-featured1">
+                            <a href="" class="img-wrapper">
+                                <div style="height: 200px;">
+                                    <img style="width: 100%;height: 100%" src="data:image/png;base64,<%= item.image %>" alt="">
+                                </div>
+                                <div class="img-overlay">
+                                    <p class="more">Xem Thêm</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 latest-news-desc">
+                            <h3><%= item.productName %></h3>
+                            <span class="l-news-detail">by admin | ngày 16 tháng 4 năm 2022 |</span>
+                            <p>
+                                Diện tích: <%= item.area %>m2 <br>
+                                Giá: <%= item.price %> VNĐ <br>
+                            </p>
+                            <p>
+                                <a href="" class="btn btn-custom">Xem Thêm..</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
         
-        </div>
-                <nav aria-label="Page navigation example">
+            <% }) %>
+        </table>
+                <!-- <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">Trang Trước</a>
@@ -131,10 +144,11 @@
                     <a class="page-link" href="#">Trang Kế</a>
                   </li>
                 </ul>
-              </nav>
+              </nav> -->
+        </div>
     </div>
     <div class="footer">
-        <div class="container ">
+        
             <div class="row">
                 <div class="col-lg-4">
                     <div id="contact" class="location">
@@ -235,7 +249,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    
     </div>
     <a href="#top" class="back-to-top" style="display: inline;">
         <i class="fa fa-chevron-up"> </i>

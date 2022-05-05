@@ -1,4 +1,5 @@
 const Product = require('../../models/product.model');
+const Category = require('../../models/category.model');
 const sql = require('../../models/db');
 const { callbackPromise } = require('nodemailer/lib/shared');
 const multer = require('multer');
@@ -63,6 +64,15 @@ exports.showBDS = (req, res) => {
         else res.render('product/bds', { product: data });
     });
 }
+exports.findAllCategory = (req, res) =>{
+    res.locals.deleted = req.query.deleted;
+    const categoryName = req.query.categoryName;
+    Category.getAll(categoryName, (err, data) => {
+        if (err)
+            res.redirect('/500')
+        else res.render( {category: data});
+    });
+}
 // exports.fileUpload = (req, res) => {
 //     let sampleFile;
 //     let uploadPath;
@@ -113,11 +123,11 @@ exports.store = (req, res) => {
         image,
         price: req.body.price,
         detail: req.body.detail,
+        area: req.body.area,
         // id_category: req.body.id_category,
         // published: !req.body.published ? false : true
     });
     // console.log(image);
-    console.log(product);
     // Save Product in the database
     Product.create(product, (err, data) => {
         if (err)
@@ -129,11 +139,27 @@ exports.store = (req, res) => {
 exports.findAll = (req, res) => {
     res.locals.deleted = req.query.deleted;
     const productName = req.query.productName;
-    Product.getAll(productName, (err, data) => {
-        if (err)
-            res.redirect('/500')
-        else res.render('product/index', { product: data });
+    const categoryName = req.query.categoryName;
+    let product;
+    let category;
+    const getProduct = new Promise((resolve, reject) => {
+        Product.getAll(productName, (err, data) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data);
+        });
+    })
+    const getCategory = new Promise((resolve, reject) => {
+        Category.getAll(categoryName, (err, data1) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data1);
+        });
     });
+    Promise.all([getProduct,getCategory]).then(values => {
+        res.render('product/index', { product: values[0],category: values[1] })
+    })
+
 };
 exports.edit = (req, res) => {
     res.locals.status = req.query.status;
@@ -145,7 +171,9 @@ exports.edit = (req, res) => {
             } else {
                 res.redirect('/500');
             }
-        } else res.render('product/edit', { product: data });
+        } else {
+            res.render('product/edit', { product: data })
+        };
     });
 };
 exports.update = (req, res) => {

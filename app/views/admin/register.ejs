@@ -11,17 +11,22 @@
     <div class="login-form">
         <h1>Tạo tài khoản Admin</h1>
         <form action="/admin/register" method="POST">
-			<input type="text" name="name" placeholder="Tên" 
+            <label>Tên:</label>
+			<input type="text" name="name" placeholder="Nhập Tên" 
                 <% if (typeof name != "undefined" && name) { %> value="<%= name %>"<% } %> required>
-            <input type="text" name="email" placeholder="Email" 
+            <label>Email:</label>
+            <input type="text" name="email" placeholder="Nhập Email" 
                 <% if (typeof email != "undefined" && email) { %> value="<%= email %>"<% } %>  required>
-            <input type="password" name="password" placeholder="Mật khẩu" 
+            <label>Mật khẩu:</label>
+            <input type="password" name="password" placeholder="Nhập Mật khẩu" 
                 <% if (typeof password != "undefined" && password) { %> value="<%= password %>"<% } %> required>
 			
             <% if (typeof conflictError != "undefined" && conflictError) { %>
                 <div class="text-danger text-left  mb-3"><%= conflictError %></div>
             <% } %>
-            <input type="submit">
+            <button type="submit" class="button3">Đăng Ký</button>
+            <label>Bạn đã có tài khoản ?</label>
+            <a href="/admin/login">Đăng nhập</a>
         </form>
     </div>
 </body>

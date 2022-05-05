@@ -1,5 +1,6 @@
 
 var router = require('express').Router();
+const product = require('../controllers/admin/product.controller');
 const login = require('../controllers/auth/login.controller');
 const register = require('../controllers/auth/register.controller');
 const authMiddleware = require('../middlewares/auth.middleware');

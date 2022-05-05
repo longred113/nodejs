@@ -11,9 +11,10 @@
     <div class="login-form">
         <h1>Quên mật khẩu</h1>
         <form action="/password/email" method="POST">
-            <input type="text" name="email" placeholder="Email" 
+            <label>Email:</label>
+            <input type="text" name="email" placeholder="Nhập Email" 
                 <% if (typeof email != "undefined" && email) { %> value="<%= email %>"<% } %>  required>
-            <input type="submit">
+            <button type="submit" class="button4">Gửi</button>
         </form>
     </div>
 </body>

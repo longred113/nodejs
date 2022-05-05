@@ -23,7 +23,7 @@
             <br>
         <% } %>
         <form action="/category" method="POST">
-            <label for="categoryName">Tên danh mục</label>
+            <label for="categoryName">Tên danh mục:</label>
             <input type="text" id="categoryName" name="categoryName" placeholder="Nhập tên danh mục"
                 <% if (typeof categoryName != "undefined" && categoryName) { %> value="<%= categoryName %>"<% } %> required>
             <% if (typeof conflictError != "undefined" && conflictError) { %>

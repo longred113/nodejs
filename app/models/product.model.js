@@ -6,6 +6,7 @@ const Product = function(product){
     this.image = product.image;
     this.detail = product.detail;
     this.id_category = product.id_category;
+    this.area = product.area;
 }
 Product.create = (newProduct, result) => {
     sql.query("INSERT INTO product SET ?", newProduct, (err, res) => {
@@ -51,8 +52,8 @@ Product.getAll = (productName, result) => {
 };
 Product.updateById = (id, product, result) => {
     sql.query(
-        "UPDATE product SET productName = ?, price = ?, detail = ?,image = ? WHERE id = ?",
-        [product.productName,product.price,product.detail,product.image, id],
+        "UPDATE product SET productName = ?, price = ?, detail = ?,image = ?,area = ? WHERE id = ?",
+        [product.productName,product.price,product.detail,product.image,product.area, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);

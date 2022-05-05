@@ -25,7 +25,7 @@
     <% } %>
     <form action="/category/<%= category.id %>" method="post">
         <input type="hidden" name="_method" value="put">
-        <label for="categoryName">Tên danh mục</label>
+        <label for="categoryName">Tên danh mục:</label>
         <input type="text" id="categoryName" name="categoryName" value="<%= category.categoryName %>"
             <% if (typeof categoryName != "undefined" && categoryName) { %> value="<%= categoryName %>"<% } %>required>
         <% if (typeof conflictError != "undefined" && conflictError) { %>

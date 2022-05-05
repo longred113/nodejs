@@ -24,20 +24,31 @@
         <br>
     <% } %>
     <form action="/product" method="post" enctype="multipart/form-data">
-        <label for="productName" >Tiêu đề tin tức</label>
+        <label for="productName" >Tiêu đề tin tức:</label>
         <input type="text" id="productName" name="productName" placeholder="Nhập tiêu đề tin tức"
             <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
         <br> <br>
-        <label for="price">Giá</label>
+        <label for="price">Giá:</label>
         <input type="text" name="price" id="price" placeholder="Nhập giá"
             <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
         <br> <br>
-        <label for="detail">Chi tiết tin tức</label>
+        <label for="detail">Chi tiết tin tức:</label>
         <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
             <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required>
         <br><br>
-        <label for="image">Image</label>
+        <label for="area">Diện tích:</label>
+        <input type="text" name="area" id="area" placeholder="Nhập diện tích"
+        <% if (typeof area != "undefined" && area) { %> value="<%= area %>"<% } %> required>
+        <label for="image">Image:</label>
         <input type="file" name="myFile" />
+        <br><br>
+        <label for="category">Danh mục:</label>
+        <select name="category" id="">
+            <option value="">Chọn danh mục</option>
+            <option value="">hiện kim</option>
+            <option value="">kim sa</option>
+        </select>
+        <br><br>
         <button class="button button1" type="submit">Tạo mới</button>
         <a href="/product"><button class="button button1" type="button">Trở về</button></a>
     </form>
