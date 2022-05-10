@@ -157,3 +157,11 @@ Stroke effects - Nucleo outline icons
   background-color: crimson;
   color: white;
 }
+
+.itemDetail{
+  max-width: 20px;
+}
+
+.itemDetail span{
+  white-space: normal;
+}

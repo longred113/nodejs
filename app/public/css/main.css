@@ -107,7 +107,7 @@ h1,h2,h3,h4,h5,h6{
   backface-visibility: hidden;
   color: black;
   display: block;
-  padding: 0.5em 1em;
+  /* padding: 0.5em 1em; */
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -869,3 +869,42 @@ padding: 40px 0;
 .register-form form input{
   width: 100%;
 }
+
+.currency:before{ content:'$'; }
+.currency:after{ content: '.00'; }
+
+.dropbtn {
+  /* background-color: #4CAF50; */
+  color: white;
+  /* padding: 16px; */
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  line-height: 25px;
+  padding:2px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: white}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  /* background-color: #e4f2e4; */
+}
+.alignC { text-align: center; }

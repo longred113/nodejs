@@ -4,6 +4,9 @@ const bcrypt = require('bcrypt');
 exports.showLoginForm = (req, res) => {
     res.render('auth/login');
 }
+exports.showProfile = (req,res)=>{
+    res.render('auth/profile');
+}
 
 exports.login = (req, res) => {
     const { email, password } = req.body;

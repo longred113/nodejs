@@ -23,6 +23,9 @@ module.exports = app => {
     router.get('/bds',(req,res)=>{
         res.render('bds');
     })
+    router.get('/profile',authMiddleware.loggedin, (req,res)=>{
+        res.render('profile');
+    })
 
     app.use(router);
     

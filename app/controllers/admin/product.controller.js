@@ -39,6 +39,20 @@ exports.create = (req, res) => {
     res.locals.status = req.query.status;
     res.render('product/create');
 }
+exports.showDetail = (req, res) =>{
+    res.locals.status = req.query.status;
+    Product.findById(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.redirect('/404');
+            } else {
+                res.redirect('/500');
+            }
+        } else {
+            res.render('product/details', { product: data });
+        };
+    });
+}
 // exports.showFrom = (req, res) =>{
 //     res.locals.status = req.query.status;
 //     Product.findById(req.params.id, (err, data) => {
@@ -116,24 +130,29 @@ exports.store = (req, res) => {
     if (!req.body) {
         res.redirect('/product/create?status=error')
     }
-    const image = req.file.buffer.toString('base64');
-    // console.log(image)
+    const Image = req.file.filename;
+    const numberFormat = new Intl.NumberFormat('vi-VN', {
+  style: 'currency',
+  currency: 'VND',
+});
+    console.log(Image);
     const product = new Product({
         productName: req.body.productName,
-        image,
+        Image,
         price: req.body.price,
         detail: req.body.detail,
         area: req.body.area,
         // id_category: req.body.id_category,
         // published: !req.body.published ? false : true
     });
+    console.log(req.body);
     // console.log(image);
     // Save Product in the database
-    Product.create(product, (err, data) => {
-        if (err)
-            res.redirect('/product/create?status=error')
-        else res.redirect('/product/create?status=success')
-    });
+    // Product.create(product, (err, data) => {
+    //     if (err)
+    //         res.redirect('/product/create?status=error')
+    //     else res.redirect('/product/create?status=success')
+    // });
 };
 
 exports.findAll = (req, res) => {
@@ -186,8 +205,8 @@ exports.update = (req, res) => {
     // } else {
     //     req.body.published = false;
     // }
-    const image = req.file.buffer.toString('base64');
-    // console.log(image);
+    const image = req.file.filename;
+    // console.log(req.data);
     Product.updateById(
         req.params.id,
         new Product({

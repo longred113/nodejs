@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="login-form">
-        <h2>Chỉnh sủa tin tức</h2>
+        <h2>Chỉnh sửa tin tức</h2>
     
         <% if (typeof status !== 'undefined') { %>
             <%if (status == 'success') { %>
@@ -29,22 +29,32 @@
             <input type="text" id="productName" name="productName" value="<%= product.productName %>"
                 <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %>required>
             <label for="price">Giá</label>
-            <input type="text" name="price" id="price" value="<%= product.price %>"
+            <input type="text" name="number" id="price" value="<%= product.price %>"
                 <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %>required>
-            <label for="detail">Chi tiết tin tức</label>
-            <input type="text" name="detail" id="detail" value="<%= product.detail %>"
-                <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %>required>
+            <label for="area">Diện tích</label>
             <input type="text" name="area" id="area" value="<%= product.area %>"
                 <% if (typeof area != "undefined" && area) { %> value="<%= area %>"<% } %>required>
-            <% if (typeof conflictError != "undefined" && conflictError) { %>
+            <label for="detail">Chi tiết tin tức</label>
+            <textarea name="detail" id="" cols="38" rows="10"><%= product.detail %></textarea>
+            <!-- <input type="text" name="detail" id="detail" value="<%= product.detail %>"
+                    <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %>required> -->
+                <% if (typeof conflictError != "undefined" && conflictError) { %>
                 <div class="text-danger text-left  mb-3"><%= conflictError %></div>
             <% } %>    
             <br> <br>
             <label for="image">Image</label>
-            <img type="file" name="myFile" src="data:image/png;base64,<%= product.image %>"/>
+            <img style="max-width: 300px;" src="/uploads/<%= product.image %>"/>
+            <output></output>
+            <input type="file" name="myFile" value="<%= product.image %>">
             <button class="button button1" type="submit">Cập nhật</button>
             <a href="/product"><button class="button button1" type="button">trở về</button></a>
         </form>
     </div>
+    <script type="text/javascript" src="js/jquery.number.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#price').number( true, 0,',','.' );
+        }); 
+    </script>
 </body>
 </html>

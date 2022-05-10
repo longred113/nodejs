@@ -269,6 +269,10 @@
                             <button class="button button1" type="submit" >Tìm kiếm</button>
                           </form>
                         <br>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         </td>
                         <td class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">
                             Tạo tin tức mới
@@ -286,8 +290,8 @@
                       <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Tiêu đề tin tức</th>
                       <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Danh mục</th>
                       <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Giá</th>
-                      <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Chi tiết tin tức</th>
                       <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Diện tích</th>
+                      <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Chi tiết tin tức</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -297,8 +301,8 @@
                       <!-- <td class="align-middle text-center ">
                         <%= item.id %>
                       </td> -->
-                      <td>
-                        <img style="width: 50%;height: 100%" src="data:image/png;base64,<%= item.image %>" alt="">
+                      <td class="align-middle text-center ">
+                        <img style="width: 55%;height: 100%" src="/uploads/<%= item.image %>" alt="">
                       </td>
                       <td class="align-middle text-center ">
                         <%= item.productName %>
@@ -306,14 +310,16 @@
                       <td class="align-middle text-center ">
                         
                       </td>
-                      <td class="align-middle text-center ">
+                      <td class="currency align-middle text-center ">
                         <%= item.price %> VNĐ
-                      </td>
-                      <td class="align-middle width: 10px">
-                        <%= item.detail %>
                       </td>
                       <td class="align-middle text-center ">
                         <%= item.area %>
+                      </td>
+                      <td class="itemDetail align-middle">
+                        <span>
+                          <%= item.detail %>
+                        </span>
                       </td>
                       <td class="align-middle">
                         <i class="fas fa-edit" style="font-size:24px"></i>
@@ -684,6 +690,12 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/css/js/material-dashboard.min.js?v=3.0.2"></script>
+  <script type="text/javascript" src="js/jquery.number.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#price').price( true, 0,',','.' );
+        }); 
+    </script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@ var router = require('express').Router();
 
 module.exports = app => {
     // SET STORAGE
-    var storage = multer.memoryStorage({
+    var storage = multer.diskStorage({
         destination: function (req, file, cb) {
             let path = 'app/public/uploads';
             if (!fsExtra.existsSync(path)) {
@@ -46,6 +46,8 @@ module.exports = app => {
     router.delete("/delete", product.deleteAll);
     router.get("/image", product.showFrom);
     router.post("/image", upload.single('sampleFile'),product.uploadFile);
+    router.get("/detail/:id",product.showDetail);
+    router.post("/detail/:id",product.showDetail);
     // router.post('/product/create',upload.single('myFile'));
     router.get("/bds", product.showBDS);
     // router.get("/editImage/:id", product.updateImage);
