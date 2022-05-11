@@ -94,7 +94,7 @@
                             <li class="breadcrumb-item">
                                 <a href="#">Trang Chủ</a>
                             </li>
-                            <li class="breadcrumb-item">Tài khoản</li>
+                            <li class="breadcrumb-item">Cập nhật tài khoản</li>
                         </ul>
                     </nav>
                 </div>
@@ -102,39 +102,44 @@
         </div>
     </div>
     <div class="container">
-        <div class="d-flex py-4 flex-wrap">
-            <table  cellspacing="0px" width="100%" style="background-color: rgb(246, 236, 236)">
-                <tr>
-                    <th colspan="3" style="font-size:24px" class="alignC" >Thông tin tài khoản</th>
-                </tr>
-                <tr>
-                    <td class="alignC" style="font-size:24px">Họ tên </td>
-                    <td class="alignC" style="font-size:24px">: </td>
-                    <td style="font-size:24px"><%=user.firstName %> <%=user.lastName %></td>
-                </tr>
-                <tr>
-                    <td class="alignC"style="font-size:24px">Email </td>
-                    <td class="alignC" style="font-size:24px">: </td>
-                    <td style="font-size:24px"><%=user.email %></td>
-                </tr>
-                <tr>
-                    <td class="alignC"style="font-size:24px">Quốc gia </td>
-                    <td class="alignC" style="font-size:24px">: </td>
-                    <td style="font-size:24px">Việt Nam</td>
-                </tr>
-                <tr>
-                    <td class="alignC"style="font-size:24px">Điện thoại </td>
-                    <td class="alignC" style="font-size:24px">: </td>
-                    <td style="font-size:24px"><%=user.phoneNumber %></td>
-                </tr>
-                <tr>
-                    <td class="alignC"style="font-size:24px">Địa chỉ </td>
-                    <td class="alignC" style="font-size:24px">: </td>
-                    <td style="font-size:24px"><%=user.address %></td>
-                </tr>
-            </table>
-            <div class="login-form">
-                <a href="/auth/edit/<%=user.id %>"><button class="button button1" type="button">Chỉnh sửa thông tin tài khoản</button></a>
+        <div class="d-flex py-4 flex-wrap" style="background-color: rgb(246, 236, 236)">
+            <div class="login-form" >
+            <h2>Chỉnh sửa thông tin cá nhân</h2>
+
+            <% if (typeof status !== 'undefined') { %>
+                <%if (status == 'success') { %>
+                    <div style="color: green;">
+                        Cập nhật thông tin thành công
+                    </div>
+                <% } else { %>
+                    <div style="color: red;">
+                        Có lỗi xảy ra trong quá trình cập nhật thông tin
+                    </div>
+                <% } %>
+                <br>
+            <% } %>
+            <form action="/auth/<%= user.id %>" method="post">
+                <input type="hidden" name="_method" value="put">
+                <label>Họ: </label>
+                <input type="text" id="firstName" name="firstName" placeholder="Họ" value="<%= user.firstName %>"
+                    <% if (typeof firstName != "undefined" && firstName) { %> value="<%= firstName %>"<% } %>required>
+                <label>Tên: </label>
+                <input type="text" id="lastName" name="lastName" placeholder="Tên" value="<%= user.lastName %>"
+                    <% if (typeof lastName != "undefined" && lastName) { %> value="<%= lastName %>"<% } %>required>
+                <label>Số điện thoại: </label>
+                <input id="mobile" type="text" name="phoneNumber" placeholder="Số điện thoại" value="<%= user.phoneNumber %>"
+                    <% if (typeof phoneNumber != "undefined" && phoneNumber) { %> value="<%= phoneNumber %>"<% } %>required>
+                <br>
+                <label>Địa chỉ: </label>
+                <input type="text" id="address" name="address" placeholder="Địa chỉ" value="<%= user.address %>"
+                    <% if (typeof address != "undefined" && address) { %> value="<%= address %>"<% } %>required>
+                <% if (typeof conflictError != "undefined" && conflictError) { %>
+                    <div class="text-danger text-left  mb-3"><%= conflictError %></div>
+                <% } %>    
+                <br> <br>
+                <button class="button button1" type="submit">Cập nhật</button>
+                <a href="/profile"><button class="button button1" type="button">Trở về</button></a>
+            </form>
             </div>
         </div>
     </div>
@@ -282,6 +287,24 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('body').on('click','.checkmobile', function() {
+            var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            var mobile = $('#mobile').val();
+            if(mobile !==''){
+                if (vnf_regex.test(mobile) == false) 
+                {
+                    alert('Số điện thoại của bạn không đúng định dạng!');
+                }else{
+                    alert('Số điện thoại của bạn hợp lệ!');
+                }
+            }else{
+                alert('Bạn chưa điền số điện thoại!');
+            }
+            });
+        });
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>new WOW().init();</script>
 

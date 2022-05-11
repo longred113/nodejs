@@ -908,3 +908,8 @@ padding: 40px 0;
   /* background-color: #e4f2e4; */
 }
 .alignC { text-align: center; }
+.edit-form{
+  width: 400px;
+  margin: 0 auto;
+  font-family: Tahoma, Geneva, sans-serif;
+}

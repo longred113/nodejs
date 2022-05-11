@@ -21,7 +21,9 @@ module.exports = app => {
 
     .get('/password/reset/:email', forgotPassword.showResetForm)
     .post('/password/reset', forgotPassword.reset)
-
+    
+    .get('/auth/edit/:id', login.editUser)
+    .put('/auth/:id', login.updateUser)
     app.use(router);
     
 }

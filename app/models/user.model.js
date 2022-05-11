@@ -5,6 +5,8 @@ const User = function(user){
     this.lastName = user.lastName;
     this.password = user.password;
     this.email = user.email;
+    this.phoneNumber = user.phoneNumber;
+    this.address = user.address;
 }
 
 User.create = (newUser, result) => {
@@ -69,5 +71,42 @@ User.resetPassword = (email, password, result) => {
         }
     );
 };
+
+User.findById = (id, result)=>{
+    sql.query(`SELECT * FROM users WHERE id = ${id}`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if (res.length) {
+            console.log("found user: ", res[0]);
+            result(null, res[0]);
+            return;
+        }
+        // not found todo with the id
+        result({ kind: "not_found" }, null);
+    });
+}
+User.updateById = (id, user, result)=>{
+    sql.query(
+        "UPDATE users SET firstName = ?, lastName = ?, phoneNumber = ?, address = ?  WHERE id = ?",
+        [user.firstName,user.lastName,user.phoneNumber,user.address, id],
+        (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+                return;
+            }
+            if (res.affectedRows == 0) {
+                // not found todo with the id
+                result({ kind: "not_found" }, null);
+                return;
+            }
+            console.log("updated user: ", { id: id, ...user });
+            result(null, { id: id, ...user });
+        }
+    );
+}
 
 module.exports = User;

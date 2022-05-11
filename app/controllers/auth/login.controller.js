@@ -7,6 +7,36 @@ exports.showLoginForm = (req, res) => {
 exports.showProfile = (req,res)=>{
     res.render('auth/profile');
 }
+exports.editUser =(req,res)=>{
+    res.locals.status = req.query.status;
+    User.findById(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.redirect('/404');
+            } else {
+                res.redirect('/500');
+            }
+        } else res.render('auth/edit', { user: data });
+    });
+}
+exports.updateUser = (req,res)=>{
+    if (!req.body) {
+        res.redirect('/auth/edit/' + req.params.id + '?status=error')
+    }
+    User.updateById(
+        req.params.id,
+        new User(req.body),
+        (err, data) => {
+            if (err) {
+                if (err.kind === "not_found") {
+                    res.redirect('/404');
+                } else {
+                    res.redirect('/500');
+                }
+            } else res.redirect('/auth/edit/' + req.params.id + '?status=success');
+        }
+    );
+}
 
 exports.login = (req, res) => {
     const { email, password } = req.body;
