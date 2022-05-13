@@ -45,8 +45,9 @@
         <label for="category">Danh mục:</label>
         <select name="category" id="">
             <option value="">Chọn danh mục</option>
-            <option value="">hiện kim</option>
-            <option value="">kim sa</option>
+            <% category.forEach((item) => {%>
+            <option value=""><% item.categoryName %></option>
+            <% }) %>
         </select>
         <br><br>
         <button class="button button1" type="submit">Tạo mới</button>

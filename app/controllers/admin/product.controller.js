@@ -37,7 +37,14 @@ const path = require('path');
 
 exports.create = (req, res) => {
     res.locals.status = req.query.status;
-    res.render('product/create');
+    const categoryName = req.query.categoryName;
+    let category;
+    Category.getAll(categoryName, (err, data) => {
+        if (err)
+            res.redirect('/500')
+        else res.render('product/create', {category: data});
+    });
+
 }
 exports.showDetail = (req, res) =>{
     res.locals.status = req.query.status;
@@ -131,11 +138,15 @@ exports.store = (req, res) => {
         res.redirect('/product/create?status=error')
     }
     const Image = req.file.filename;
-    const numberFormat = new Intl.NumberFormat('vi-VN', {
-  style: 'currency',
-  currency: 'VND',
-});
-    console.log(Image);
+    // console.log(Image);
+    const categoryName = req.query.categoryName;
+    const getCategory = new Promise((resolve, reject) => {
+        Category.getAll(categoryName, (err, data1) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data1);
+        });
+    });
     const product = new Product({
         productName: req.body.productName,
         Image,

@@ -36,7 +36,7 @@ module.exports = app => {
     router.get("/", product.findAll);
     // router.get("/", product.findAllCategory);
     router.get("/create", product.create);
-    router.get("/create", product.findAllCategory);
+    // router.get("/create", product.findAllCategory);
     router.post("/",upload.single('myFile'), product.store);
     router.get("/edit/:id", product.edit);
     router.post("/edit/:id",upload.single('myFile'),product.edit)
