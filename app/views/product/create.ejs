@@ -33,8 +33,10 @@
             <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
         <br> <br>
         <label for="detail">Chi tiết tin tức:</label>
-        <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
-            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required>
+        <textarea name="detail" id="detail" cols="38" rows="10" placeholder="Nhập chi tiết tin tức"
+            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required></textarea>
+        <!-- <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
+            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required> -->
         <br><br>
         <label for="area">Diện tích:</label>
         <input type="text" name="area" id="area" placeholder="Nhập diện tích"
@@ -46,8 +48,15 @@
         <select name="category" id="">
             <option value="">Chọn danh mục</option>
             <% category.forEach((item) => {%>
-            <option value=""><% item.categoryName %></option>
+            <option value="<%=item.id%>"><%= item.categoryName %></option>
             <% }) %>
+        </select>
+        <br><br>
+        <label for="">Trạng thái:</label>
+        <select name="status">
+            <option value="">Chọn trạng thái</option>
+            <option value="Mua bán">Mua bán</option>
+            <option value="Cho thuê">Cho thuê</option>
         </select>
         <br><br>
         <button class="button button1" type="submit">Tạo mới</button>

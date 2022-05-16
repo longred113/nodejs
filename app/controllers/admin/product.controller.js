@@ -47,18 +47,33 @@ exports.create = (req, res) => {
 
 }
 exports.showDetail = (req, res) =>{
+    let product;
+    let category;
     res.locals.status = req.query.status;
-    Product.findById(req.params.id, (err, data) => {
-        if (err) {
-            if (err.kind === "not_found") {
-                res.redirect('/404');
+    const getProduct = new Promise((resolve, reject) => {
+        Product.findById(req.params.id, (err, data) => {
+            if (err) {
+                if (err.kind === "not_found") {
+                    res.redirect('/404');
+                } else {
+                    res.redirect('/500');
+                }
             } else {
-                res.redirect('/500');
-            }
-        } else {
-            res.render('product/details', { product: data });
-        };
+                resolve(data);
+            };
+        });
+    })
+    const categoryName = req.query.categoryName;
+    const getCategory = new Promise((resolve, reject) => {
+        Category.getAll(categoryName, (err, data1) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data1);
+        });
     });
+    Promise.all([getProduct,getCategory]).then(values => {
+        res.render('product/details', { product: values[0],category: values[1] })
+    })
 }
 // exports.showFrom = (req, res) =>{
 //     res.locals.status = req.query.status;
@@ -79,11 +94,27 @@ exports.showFrom = (req, res) => {
 exports.showBDS = (req, res) => {
     res.locals.deleted = req.query.deleted;
     const productName = req.query.productName;
-    Product.getAll(productName, (err, data) => {
-        if (err)
-            res.redirect('/500')
-        else res.render('product/bds', { product: data });
+    const categoryName = req.query.categoryName;
+    let product;
+    let category;
+    const getProduct = new Promise((resolve, reject) => {
+        Product.getAll(productName, (err, data) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data);
+        });
+    })
+    const getCategory = new Promise((resolve, reject) => {
+        Category.getAll(categoryName, (err, data1) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data1);
+        });
     });
+    Promise.all([getProduct,getCategory]).then(values => {
+        res.render('product/bds', { product: values[0],category: values[1] })
+    })
+
 }
 exports.findAllCategory = (req, res) =>{
     res.locals.deleted = req.query.deleted;
@@ -137,33 +168,28 @@ exports.store = (req, res) => {
     if (!req.body) {
         res.redirect('/product/create?status=error')
     }
-    const Image = req.file.filename;
-    // console.log(Image);
-    const categoryName = req.query.categoryName;
-    const getCategory = new Promise((resolve, reject) => {
-        Category.getAll(categoryName, (err, data1) => {
-            if (err)
-                res.redirect('/500')
-            else resolve(data1);
-        });
-    });
+    const image = req.file.filename;
+    console.log(image);
     const product = new Product({
         productName: req.body.productName,
-        Image,
+        image,
         price: req.body.price,
         detail: req.body.detail,
         area: req.body.area,
+        id_category: req.body.category,
+        status: req.body.status,
         // id_category: req.body.id_category,
         // published: !req.body.published ? false : true
     });
-    console.log(req.body);
+    console.log(product);
+    // console.log(req.body);
     // console.log(image);
     // Save Product in the database
-    // Product.create(product, (err, data) => {
-    //     if (err)
-    //         res.redirect('/product/create?status=error')
-    //     else res.redirect('/product/create?status=success')
-    // });
+    Product.create(product, (err, data) => {
+        if (err)
+            res.redirect('/product/create?status=error')
+        else res.redirect('/product/create?status=success')
+    });
 };
 
 exports.findAll = (req, res) => {
@@ -192,19 +218,33 @@ exports.findAll = (req, res) => {
 
 };
 exports.edit = (req, res) => {
+    let product;
+    let category;
     res.locals.status = req.query.status;
-
-    Product.findById(req.params.id, (err, data) => {
-        if (err) {
-            if (err.kind === "not_found") {
-                res.redirect('/404');
+    const getProduct = new Promise((resolve, reject) => {
+        Product.findById(req.params.id, (err, data) => {
+            if (err) {
+                if (err.kind === "not_found") {
+                    res.redirect('/404');
+                } else {
+                    res.redirect('/500');
+                }
             } else {
-                res.redirect('/500');
-            }
-        } else {
-            res.render('product/edit', { product: data })
-        };
+                resolve(data);
+            };
+        });
+    })
+    const categoryName = req.query.categoryName;
+    const getCategory = new Promise((resolve, reject) => {
+        Category.getAll(categoryName, (err, data1) => {
+            if (err)
+                res.redirect('/500')
+            else resolve(data1);
+        });
     });
+    Promise.all([getProduct,getCategory]).then(values => {
+        res.render('product/edit', { product: values[0],category: values[1] })
+    })
 };
 exports.update = (req, res) => {
     // Validate Request
@@ -217,12 +257,19 @@ exports.update = (req, res) => {
     //     req.body.published = false;
     // }
     const image = req.file.filename;
+    console.log(req.body);
     // console.log(req.data);
     Product.updateById(
         req.params.id,
         new Product({
-            ...req.body,
-            image
+            ...{productName: req.body.productName,
+            price: req.body.price,
+            detail: req.body.detail,
+            area: req.body.area,
+            id_category: req.body.category,
+            status: req.body.status,},
+            image,
+            
         }),
         (err, data) => {
             if (err) {

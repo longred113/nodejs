@@ -29,13 +29,14 @@
             <input type="text" id="productName" name="productName" value="<%= product.productName %>"
                 <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %>required>
             <label for="price">Giá</label>
-            <input type="text" name="number" id="price" value="<%= product.price %>"
+            <input type="text" name="price" id="price" value="<%= product.price %>"
                 <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %>required>
             <label for="area">Diện tích</label>
             <input type="text" name="area" id="area" value="<%= product.area %>"
                 <% if (typeof area != "undefined" && area) { %> value="<%= area %>"<% } %>required>
             <label for="detail">Chi tiết tin tức</label>
-            <textarea name="detail" id="" cols="38" rows="10"><%= product.detail %></textarea>
+            <textarea name="detail" id="" cols="38" rows="10" 
+            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %>required><%= product.detail %></textarea>
             <!-- <input type="text" name="detail" id="detail" value="<%= product.detail %>"
                     <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %>required> -->
                 <% if (typeof conflictError != "undefined" && conflictError) { %>
@@ -44,8 +45,23 @@
             <br> <br>
             <label for="image">Image</label>
             <img style="max-width: 300px;" src="/uploads/<%= product.image %>"/>
-            <output></output>
             <input type="file" name="myFile" value="<%= product.image %>">
+            <br><br>
+            <label for="category">Danh mục:</label>
+            <select name="category" id="">
+                <option value="<%=product.id_category%>">Chọn danh mục</option>
+                <% category.forEach((item) => {%>
+                    <option value="<%=item.id%>"><%= item.categoryName %></option>
+                <% }) %>
+            </select>
+            <br><br>
+            <label for="">Trạng thái:</label>
+            <select name="status">
+                <option value="<%= product.status %>">Chọn trạng thái</option>
+                <option value="Mua bán">Mua bán</option>
+                <option value="Cho thuê">Cho thuê</option>
+            </select>
+            <br><br>
             <button class="button button1" type="submit">Cập nhật</button>
             <a href="/product"><button class="button button1" type="button">trở về</button></a>
         </form>

@@ -1,23 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset mật khẩu người dùng</title>
-	<link rel="stylesheet" href="/css/main.css">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex">
+	<title>Đăng nhập tài khoản</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+	<link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
 </head>
+<a id="top"></a>
+
 <body>
-    <div class="login-form">
-        <h1>Reset mật khẩu</h1>
-        <form action="/password/reset" method="POST">
-            <input type="hidden" value="<%= token %>" name="token">
-            <label>Email:</label>
-            <input type="text" name="email" placeholder="Email" value="<%= email %>" required readonly>
-            <label>Mật khẩu:</label>
-            <input type="password" name="password" placeholder="Nhập mật khẩu" required>
-            <button type="submit" class="button4">Gửi</button>
-        </form>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<a class="navbar-brand" href="/">GoldMark City</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+			 aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+
+				<ul class="menu nav navbar-nav">
+					<li>
+						<a href="/">Trang Chủ</a>
+					</li>
+					<li>
+						<a href="#feature">Tiện Ích</a>
+					</li>
+					<li>
+						<a href="#model">Căn Hộ Mẫu</a>
+					</li>
+					<li>
+						<a href="#project">Dự Án</a>
+					</li>
+                    <li>
+						<a href="/product/bds">Bất động sản</a>
+					</li>
+					<li>
+						<a href="#employ">Nhân Viên</a>
+					</li>
+					<li>
+						<a href="/news">Tin Tức</a>
+					</li>
+					<li>
+						<a href="#contact">Liên Hệ</a>
+					</li>
+				</ul>
+                <div class="navbar-nav ml-auto">
+					<div class="dropdown">
+						<div class="fa fa-user"style="font-size:24px"><button class="dropbtn"></button></div>
+						<div class="dropdown-content">	
+							<a href="/login">Đăng nhập</a>
+							<a href="/register">Đăng ký</a>
+						</div>
+					</div>
+				</div>
+                
+				<!--<ul class="menu nav navbar-nav text-uppercase ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Trang Chủ
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Dịch Vụ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Giới Thiệu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Liên Hệ</a>
+					</li>
+				</ul>-->
+			</div>
+		</nav>
+	</div>
+    <div class="blue-fluid">
+        <div class="container">
+            <div class="row pt-2 pb-2">
+                <div class="col-sm-12 title">
+                    <h5>Tài khoản</h5>
+                </div>
+                <div class="col-sm-12 bc">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb ml-auto">
+                            <li class="breadcrumb-item">
+                                <a href="/">Trang Chủ</a>
+                            </li>
+                            <li class="breadcrumb-item">Đặt lại mật khẩu</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class=" background">
+        <div>
+            <div class="login-form">
+                <h1>Đặt lại mật khẩu</h1>
+                <form action="/password/reset" method="POST">
+                    <input type="hidden" value="<%= token %>" name="token">
+                    <label>Email:</label>
+                    <input type="text" name="email" placeholder="Email" value="<%= email %>" required readonly>
+                    <label>Mật khẩu:</label>
+                    <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+                    <button type="submit" class="button4">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="contact" class="location">
+						<h3>Địa Chỉ Công Ty</h3>
+					</div>
+					<div class="contact-infor">
+						<p>
+							<i class="fa fa-home"></i></p>
+						<p>
+							<i class="fa fa-phone"></i>0728413190</p>
+						<p>
+							<i class="fa fa-globe"></i></p>
+					</div>
+					<div class="follow">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3></h3>
+						</div>
+						<div class="tweet-desc">
+							<p></p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								
+							</p>
+							<p></p>
+
+						</div>
+						<hr>
+						<div class="tweet-desc">
+							<p></p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								
+							</p>
+							<p></p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3>Liên Hệ</h3>
+						</div>
+						<div class="row">
+
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Tên...">
+							</div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Email...">
+							</div>
+							<div class="col-sm-12 mt-3">
+								<textarea class="form-control" placeholder="Lời nhắn..." rows="6"></textarea>
+							</div>
+							<div class="col-sm-12 mt-3">
+								<button type="submit" class="btn btn-dark">Đăng Ký Nhận Báo Giá</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <a href="#top" class="back-to-top" style="display: inline;">
+        <i class="fa fa-chevron-up"> </i>
+    </a>
+    <!-- end footer -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/jquery.animateNumber.js"></script>
+    <script>$('#workhr').animateNumber({ number: 7200 });</script>
+    <script>$('#reward').animateNumber({ number: 200 });</script>
+    <script>$('#satis').animateNumber({ number: 364 });</script>
+    <script>$('#complt').animateNumber({ number: 1701 });</script>
+    <script type="text/javascript" src="js/jquery.number.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#price').number( true, 0,',','.' );
+        }); 
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    window.location.hash = target;
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('body').on('click','.checkmobile', function() {
+            var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            var mobile = $('#mobile').val();
+            if(mobile !==''){
+                if (vnf_regex.test(mobile) == false) 
+                {
+                    alert('Số điện thoại của bạn không đúng định dạng!');
+                }else{
+                    alert('Số điện thoại của bạn hợp lệ!');
+                }
+            }else{
+                alert('Bạn chưa điền số điện thoại!');
+            }
+            });
+        });
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>new WOW().init();</script>
+
 </body>
+
 </html>

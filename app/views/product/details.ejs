@@ -54,6 +54,15 @@
 						<a href="#contact">Liên Hệ</a>
 					</li>
 				</ul>
+                <div class="navbar-nav ml-auto">
+					<div class="dropdown">
+						<div class="fa fa-user"style="font-size:24px"><button class="dropbtn"></button></div>
+						<div class="dropdown-content">	
+							<a href="/profile">Tài khoản</a>
+							<a href="/logout">Đăng xuất</a>
+						</div>
+					</div>
+				</div>
                 <!--<ul class="menu nav navbar-nav text-uppercase ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="#">Trang Chủ
@@ -86,7 +95,7 @@
                                 <a href="#">Trang Chủ</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="news.html">Tin Tức</a>
+                                <a href="news.html">Bất động sản</a>
                             </li>
                             <li class="breadcrumb-item"><%= product.productName %></li>
                         </ul>
@@ -105,16 +114,9 @@
                 <p>
                     <%= product.detail %>
                 </p>
-                <p class="figure-caption text-center">
-                    <!-- Phối cảnh tổng thể mẫu biệt thự kiểu Pháp tân cổ điển 4 tầng KT16131 -->
-                </p>
-                <!-- <p>Ngôi biệt thự 4 tầng Tân cổ điển gây ấn tượng bởi những thước côt Hy Lạp – La Mã chắc khỏe, gợi nhớ một thời
-                    đế chế La Mã hùng mạnh. Nằm bên trong thước cột vuông vắn này là những cột tròn khiến không gian bớt
-                    trống trải hơn. Dường như sơn tường trắng, cửa dạng vòm và cửa sổ kính là một bộ ba hoàn hảo bởi sự ăn
-                    khớp đầy thuyết phục khi phối hợp cùng nhau. Góp phần xua tan những đơn giản trên các mảng tường, những
-                    chiếc đèn treo tường nhỏ xinh được lựa chọn để tạo thêm nét duyên dáng, đồng thời cũng được sử dụng để
-                    thắp sáng màn đêm. Lan can sắt ở ban công cũng phối hợp ăn ý với dàn hoa sắt uốn lượn đẹp mắt ở cổng
-                    và hàng rào, góp phần tạo nên tổng thể ngôi nhà sang trọng và thống nhất trong phong cách thiết kế.</p> -->
+                <br>
+                <img src="/img/area.png" style="width: 3%;height: 2%">Diện tích: <%= product.area %> m²
+                
                 <p class="title-search mt-3">BÌNH LUẬN</p>
                 <div class="box" style="border:none;">
                     <div class="box-product">
@@ -236,21 +238,21 @@
 
     </div> 
     <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div id="contact" class="location">
-                        <h3>Địa Chỉ Công Ty</h3>
-                    </div>
-                    <div class="contact-infor">
-                        <p>
-                            <i class="fa fa-home"></i>381 Nam Kỳ Khởi Nghĩa, Lầu 3 phòng 302 hoặc Lầu 5 phòng 502</p>
-                        <p>
-                            <i class="fa fa-phone"></i> Quên rùi :D </p>
-                        <p>
-                            <i class="fa fa-globe"></i> Chưa Dk tên miền :D</p>
-                    </div>
-                    <div class="follow">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div id="contact" class="location">
+						<h3>Địa Chỉ Công Ty</h3>
+					</div>
+					<div class="contact-infor">
+						<p>
+							<i class="fa fa-home"></i></p>
+						<p>
+							<i class="fa fa-phone"></i>0728413190</p>
+						<p>
+							<i class="fa fa-globe"></i></p>
+					</div>
+					<div class="follow">
                         <h3>Follow Us</h3>
                         <ul>
                             <li>
@@ -285,60 +287,60 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="footer-col">
-                        <div class="location">
-                            <h3>Tin Mới Nhất</h3>
-                        </div>
-                        <div class="tweet-desc">
-                            <p>@1nguoinaodo</p>
-                            <p>
-                                <i class="fa fa-twitter"></i>
-                                Trang web đẹp
-                            </p>
-                            <p>50 min ago</p>
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3></h3>
+						</div>
+						<div class="tweet-desc">
+							<p></p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								
+							</p>
+							<p></p>
 
-                        </div>
-                        <hr>
-                        <div class="tweet-desc">
-                            <p>@1nguoinaodothu2</p>
-                            <p>
-                                <i class="fa fa-twitter"></i>
-                                Quá chính xác
-                            </p>
-                            <p>51 min ago</p>
+						</div>
+						<hr>
+						<div class="tweet-desc">
+							<p></p>
+							<p>
+								<i class="fa fa-twitter"></i>
+								
+							</p>
+							<p></p>
 
-                        </div>
+						</div>
 
-                    </div>
-                </div>
+					</div>
+				</div>
 
-                <div class="col-lg-4">
-                    <div class="footer-col">
-                        <div class="location">
-                            <h3>Liên Hệ</h3>
-                        </div>
-                        <div class="row">
+				<div class="col-lg-4">
+					<div class="footer-col">
+						<div class="location">
+							<h3>Liên Hệ</h3>
+						</div>
+						<div class="row">
 
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="Tên...">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="Email...">
-                            </div>
-                            <div class="col-sm-12 mt-3">
-                                <textarea class="form-control" placeholder="Lời nhắn..." rows="6"></textarea>
-                            </div>
-                            <div class="col-sm-12 mt-3">
-                                <button type="submit" class="btn btn-dark">Đăng Ký Nhận Báo Giá</button>
-                            </div>
-                        </div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Tên...">
+							</div>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" placeholder="Email...">
+							</div>
+							<div class="col-sm-12 mt-3">
+								<textarea class="form-control" placeholder="Lời nhắn..." rows="6"></textarea>
+							</div>
+							<div class="col-sm-12 mt-3">
+								<button type="submit" class="btn btn-dark">Đăng Ký Nhận Báo Giá</button>
+							</div>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <a href="#top" class="back-to-top" style="display: inline;">
         <i class="fa fa-chevron-up"> </i>
     </a>
