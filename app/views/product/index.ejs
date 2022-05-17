@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="noindex">
-	<title>Đăng nhập tài khoản</title>
+	<title>Admin Dashboard </title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="shortcut icon" href="img/favicon.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +23,7 @@
 <body>
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light bg-white">
-			<a class="navbar-brand" href="/">GoldMark City</a>
+			<a class="navbar-brand" href="/adminHome">Admin Dashboard </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
 			 aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -32,36 +32,21 @@
 
 				<ul class="menu nav navbar-nav">
 					<li>
-						<a href="/">Trang Chủ</a>
+						<a href="/adminHome">Trang Chủ</a>
 					</li>
-					<li>
-						<a href="#feature">Tiện Ích</a>
-					</li>
-					<li>
-						<a href="#model">Căn Hộ Mẫu</a>
-					</li>
-					<li>
-						<a href="#project">Dự Án</a>
-					</li>
-                    <li>
-						<a href="/product/bds">Bất động sản</a>
-					</li>
-					<li>
-						<a href="#employ">Nhân Viên</a>
-					</li>
-					<li>
-						<a href="/news">Tin Tức</a>
-					</li>
-					<li>
-						<a href="#contact">Liên Hệ</a>
+          <li>
+            <a href="/category">Danh mục</a>
+          </li>
+          <li>
+						<a href="/product">Tin bất động sản</a>
 					</li>
 				</ul>
                 <div class="navbar-nav ml-auto">
 					<div class="dropdown">
 						<div class="fa fa-user"style="font-size:24px"><button class="dropbtn"></button></div>
 						<div class="dropdown-content">	
-							<a href="/login">Đăng nhập</a>
-							<a href="/register">Đăng ký</a>
+							<a href="/admin/login">Đăng nhập</a>
+							<a href="/admin/register">Đăng ký</a>
 						</div>
 					</div>
 				</div>
@@ -89,7 +74,7 @@
         <div class="container">
             <div class="row pt-2 pb-2">
                 <div class="col-sm-12 title">
-                    <h5>Tài khoản</h5>
+                    <h5>Bất động sản</h5>
                 </div>
                 <div class="col-sm-12 bc">
                     <nav aria-label="breadcrumb">
@@ -97,21 +82,21 @@
                             <li class="breadcrumb-item">
                                 <a href="/">Trang Chủ</a>
                             </li>
-                            <li class="breadcrumb-item">Đăng nhập</li>
+                            <li class="breadcrumb-item">Tin bất động sản</li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
-    <div class=" background">
+    <div class=" admin-background">
       <div class="container-fluid py-4">
         <div class="row">
           <div class="col-12">
             <div class="card my-4">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div style="transform: translateY(-30px)" class="blue-fluid shadow-primary border-radius-lg pt-4 pb-3">
-                  <h6 class="text-white text-capitalize ps-3">Bảng tin tức</h6>      
+                  <h6 class="text-white text-capitalize ps-3">Danh sách tin bất động sản</h6>      
                 </div>
               </div>
               <div class="card-body px-0 pb-2">
@@ -121,7 +106,7 @@
                         <tr>
                           <td>
                             <form action="/product" method="get">
-                              <input type="text" name="productName" placeholder="Nhập tên tin tức">
+                              <input type="text" name="productName" placeholder="Nhập tiêu đề tin tức">
                               <button class="button button1" type="submit" >Tìm kiếm</button>
                             </form>
                           <br>
@@ -129,9 +114,10 @@
                           <td></td>
                           <td></td>
                           <td></td>
+                          <td></td>
                           </td>
                           <td class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">
-                              Tạo tin tức mới
+                              Tạo tin bất động sản mới
                           </td>
                           <td class="align-middle">
                             <div>
@@ -204,6 +190,7 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
     
     <a href="#top" class="back-to-top" style="display: inline;">
