@@ -95,7 +95,7 @@
                                 <a href="#">Trang Chủ</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="news.html">Bất động sản</a>
+                                <a href="/product/bds">Bất động sản</a>
                             </li>
                             <li class="breadcrumb-item"><%= product.productName %></li>
                         </ul>
@@ -116,11 +116,22 @@
                 </p>
                 <br>
                 <img src="/img/area.png" style="width: 3%;height: 2%">Diện tích: <%= product.area %> m²
-                
+                <br>
+                <i class="fa fa-shopping-cart" style="font-size:24px"aria-hidden="true"></i>
+                <label for=""><%= product.status %></label>
+                <br>
+                <img src="/img/flats.png" style="width: 3%;height: 2%"> Loại hình: 
+                <% category.forEach((item) => {%>
+                    <%if(product.id_category === item.id){ %>
+                        <%= item.categoryName %>
+                    <% } %> 
+                <% }) %>
+                <br>
+                <img src="/img/money.png" style="width: 3%;height: 2%"> Số tiền cọc: <%= product.price %> đ
                 <p class="title-search mt-3">BÌNH LUẬN</p>
                 <div class="box" style="border:none;">
                     <div class="box-product">
-                        <div class="img-box2" style="background-image: url(img/tuananh.jpg)"></div>
+                        <div class="img-box2" style="background-image: url(/img/tuananh.jpg)"></div>
                         <div class="text-box p-1">
                             <a href="#">
                                 <a href="#">
@@ -132,7 +143,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="box-product mt-0">
-                        <div class="img-box2" style="background-image: url(img/tuananh.jpg)"></div>
+                        <div class="img-box2" style="background-image: url(/img/tuananh.jpg)"></div>
                         <div class="text-box p-1">
                             <a href="#">
                                 <a href="#">
@@ -144,7 +155,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="box-product mt-0">
-                        <div class="img-box2" style="background-image: url(img/tuananh.jpg)"></div>
+                        <div class="img-box2" style="background-image: url(/img/tuananh.jpg)"></div>
                         <div class="text-box p-1">
                             <a href="#">
                                 <a href="#">
@@ -154,22 +165,7 @@
                             <p style="font-size:14px">Thông tin rất hữu ích, cảm ơn tác giả rất nhiều.</p>
                         </div>
                     </div>
-                    <div class="clearfix"></div>
-                    <p class="title-search mt-3">ĐỂ LẠI BÌNH LUẬN</p>
-                    <form action="#">
-                        <div class="form-row">
-                            <div class="form-group col-md-5">
-                                <input type="text" class="form-control" placeholder="Tên" />
-                            </div>
-                            <div class="form-group col-md-7">
-                                <input type="text" class="form-control" placeholder="Email" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" placeholder="Nội dung"></textarea>
-                        </div>
-                        <button class="btn btn-custom">Gửi Bình Luận</button>
-                    </form>
+                    
                 </div>
 
             </div>
@@ -184,7 +180,7 @@
                 <div class="box">
                     <p class="title-search">TIN NỔI BẬT</p>
                     <div class="box-product">
-                        <img src="img/NCT-680x380.jpg" class="img-fluid img-box">
+                        <img src="/img/NCT-680x380.jpg" class="img-fluid img-box">
                         <div class="text-box">
                             <a href="#">
                                 <h6>[20/03/2018] Tiến độ khu dự án GoldMark City.</h6>
@@ -194,7 +190,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="box-product">
-                        <img src="img/NCT-680x380.jpg" class="img-fluid img-box">
+                        <img src="/img/NCT-680x380.jpg" class="img-fluid img-box">
                         <div class="text-box">
                             <a href="#">
                                 <h6>[20/03/2018] Tiến độ khu dự án GoldMark City.</h6>
@@ -204,7 +200,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="box-product">
-                        <img src="img/NCT-680x380.jpg" class="img-fluid img-box">
+                        <img src="/img/NCT-680x380.jpg" class="img-fluid img-box">
                         <div class="text-box">
                             <a href="#">
                                 <h6>[20/03/2018] Tiến độ khu dự án GoldMark City.</h6>
