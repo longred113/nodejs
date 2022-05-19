@@ -112,6 +112,9 @@
                 <label for="productName">Tiêu đề tin tức</label>
                 <input type="text" id="productName" name="productName" value="<%= product.productName %>"
                     <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %>required>
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" name="address" value="<%= product.address %>"
+                    <% if (typeof address != "undefined" && address) { %> value="<%= address %>"<% } %>required>
                 <label for="price">Giá</label>
                 <input type="text" name="price" id="price" value="<%= product.price %>"
                     <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %>required>

@@ -178,6 +178,7 @@ exports.store = (req, res) => {
         area: req.body.area,
         id_category: req.body.category,
         status: req.body.status,
+        address: req.body.address,
         // id_category: req.body.id_category,
         // published: !req.body.published ? false : true
     });
@@ -267,7 +268,8 @@ exports.update = (req, res) => {
             detail: req.body.detail,
             area: req.body.area,
             id_category: req.body.category,
-            status: req.body.status,},
+            status: req.body.status,
+            address: req.body.address,},
             image,
             
         }),

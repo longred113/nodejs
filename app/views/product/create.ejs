@@ -112,6 +112,10 @@
                 <input type="text" id="productName" name="productName" placeholder="Nhập tiêu đề tin tức"
                     <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
                 <br> <br>
+                <label for="address" >Địa chỉ</label>
+                <input type="text" id="address" name="address" placeholder="Nhập địa chỉ"
+                    <% if (typeof address != "undefined" && address) { %> value="<%= address %>"<% } %> required>
+                <br> <br>
                 <label for="price">Giá:</label>
                 <input type="text" name="price" id="price" placeholder="Nhập giá"
                     <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>

@@ -2,6 +2,7 @@ const sql = require('./db');
 
 const Product = function(product){
     this.productName = product.productName;
+    this.address = product.address;
     this.price = product.price;
     this.image = product.image;
     this.detail = product.detail;
@@ -53,8 +54,8 @@ Product.getAll = (productName, result) => {
 };
 Product.updateById = (id, product, result) => {
     sql.query(
-        "UPDATE product SET productName = ?, price = ?, detail = ?,image = ?,area = ?,id_category = ?,status = ? WHERE id = ?",
-        [product.productName,product.price,product.detail,product.image,product.area,product.id_category,product.status, id],
+        "UPDATE product SET productName = ?, price = ?, detail = ?,image = ?,area = ?,id_category = ?,status = ?,address = ? WHERE id = ?",
+        [product.productName,product.price,product.detail,product.image,product.area,product.id_category,product.status,product.address, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);

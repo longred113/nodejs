@@ -1412,3 +1412,6 @@ a {
   letter-spacing: 0rem;
   color: #344767;
 }
+.bg-gradient-primary {
+  background-image: linear-gradient(195deg, #EC407A 0%, #D81B60 100%);
+}

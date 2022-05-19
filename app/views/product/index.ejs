@@ -45,7 +45,7 @@
 					<div class="dropdown">
 						<div class="fa fa-user"style="font-size:24px"><button class="dropbtn"></button></div>
 						<div class="dropdown-content">	
-							<a href="/admin/login">Đăng nhập</a>
+							<a href="">Tài khoản Admin</a>
 							<a href="/admin/register">Đăng ký</a>
 						</div>
 					</div>
@@ -130,6 +130,7 @@
                         <!-- <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">ID</th> -->
                         <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Hình ảnh</th>
                         <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Tiêu đề tin tức</th>
+                        <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Địa chỉ</th>
                         <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Danh mục</th>
                         <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Giá</th>
                         <th class="text-center text-uppercase text-secondary text-xxl font-weight-bolder opacity-10">Diện tích</th>
@@ -149,6 +150,11 @@
                         </td>
                         <td class="align-middle text-center ">
                           <%= item.productName %>
+                        </td>
+                        <td class ="itemDetail align-middle">
+                          <span>
+                            <%= item.address %>
+                          </span>
                         </td>
                         <td class="align-middle text-center ">
                           <% category.forEach((item1) => {%>
