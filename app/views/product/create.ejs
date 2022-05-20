@@ -92,7 +92,7 @@
     </div>
     <div class=" admin-background">
       <div class="container-fluid py-4">
-        <div class="login-form">
+        <div class="login-form1">
             <h2>Tạo tin bất động sản mới</h2>
         
             <% if (typeof status !== 'undefined') { %>
@@ -108,45 +108,63 @@
                 <br>
             <% } %>
             <form action="/product" method="post" enctype="multipart/form-data">
-                <label for="productName" >Tiêu đề tin tức:</label>
-                <input type="text" id="productName" name="productName" placeholder="Nhập tiêu đề tin tức"
-                    <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
-                <br> <br>
-                <label for="address" >Địa chỉ</label>
-                <input type="text" id="address" name="address" placeholder="Nhập địa chỉ"
-                    <% if (typeof address != "undefined" && address) { %> value="<%= address %>"<% } %> required>
-                <br> <br>
-                <label for="price">Giá:</label>
-                <input type="text" name="price" id="price" placeholder="Nhập giá"
-                    <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
-                <br> <br>
-                <label for="detail">Chi tiết tin tức:</label>
-                <textarea name="detail" id="detail" cols="38" rows="10" placeholder="Nhập chi tiết tin tức"
-                    <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required></textarea>
-                <!-- <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
-                    <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required> -->
-                <br><br>
-                <label for="area">Diện tích:</label>
-                <input type="text" name="area" id="area" placeholder="Nhập diện tích"
-                <% if (typeof area != "undefined" && area) { %> value="<%= area %>"<% } %> required>
-                <label for="image">Image:</label>
-                <input type="file" name="myFile" />
-                <br><br>
-                <label for="category">Danh mục:</label>
-                <select name="category" id="">
-                    <option value="">Chọn danh mục</option>
-                    <% category.forEach((item) => {%>
-                    <option value="<%=item.id%>"><%= item.categoryName %></option>
-                    <% }) %>
-                </select>
-                <br><br>
-                <label for="">Trạng thái:</label>
-                <select name="status">
-                    <option value="">Chọn trạng thái</option>
-                    <option value="Mua bán">Mua bán</option>
-                    <option value="Cho thuê">Cho thuê</option>
-                </select>
-                <br><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="productName" >Tiêu đề tin tức:</label>
+                        <input type="text" id="productName" name="productName" placeholder="Nhập tiêu đề tin tức"
+                            <% if (typeof productName != "undefined" && productName) { %> value="<%= productName %>"<% } %> required>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <label for="address" >Địa chỉ:</label>
+                        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ"
+                            <% if (typeof address != "undefined" && address) { %> value="<%= address %>"<% } %> required>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <label for="price">Giá:</label>
+                        <input type="text" name="price" id="price" placeholder="Nhập giá"
+                            <% if (typeof price != "undefined" && price) { %> value="<%= price %>"<% } %> required>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label for="area">Diện tích:</label>
+                        <input type="text" name="area" id="area" placeholder="Nhập diện tích"
+                            <% if (typeof area != "undefined" && area) { %> value="<%= area %>"<% } %> required>
+                        <br><br>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="category">Danh mục:</label>
+                        <select name="category" id="">
+                            <option value="">Chọn danh mục</option>
+                            <% category.forEach((item) => {%>
+                            <option value="<%=item.id%>"><%= item.categoryName %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Trạng thái:</label>
+                        <select name="status">
+                            <option value="">Chọn trạng thái</option>
+                            <option value="Mua bán">Mua bán</option>
+                            <option value="Cho thuê">Cho thuê</option>
+                        </select>
+                        <br><br>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="image">Image:</label>
+                        <input type="file" name="myFile" />
+                        <br><br>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="detail">Chi tiết tin tức:</label>
+                        <textarea name="detail" id="detail" cols="60" rows="10" placeholder="Nhập chi tiết tin tức"
+                            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required></textarea>
+                        <!-- <input type="text" name="detail" id="detail" placeholder="Nhập chi tiết tin tức"
+                            <% if (typeof detail != "undefined" && detail) { %> value="<%= detail %>"<% } %> required> -->
+                        <br><br>
+                    </div>
+                </div>
                 <button class="button button1" type="submit">Tạo mới</button>
                 <a href="/product"><button class="button button1" type="button">Trở về</button></a>
             </form>

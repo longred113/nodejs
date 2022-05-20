@@ -22843,7 +22843,7 @@ hr.horizontal.gray-light {
   border-right: 1px solid #dee2e6;
 }
 
-.navbar {
+/* .navbar {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
 }
 
@@ -23660,7 +23660,7 @@ hr.horizontal.gray-light {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
-}
+} */
 
 .sidenav[data-color="primary"] .navbar-nav>.nav-item .nav-link.active+.collapse .nav-item.active .nav-link.active,
 .sidenav[data-color="primary"] .navbar-nav>.nav-item .nav-link.active+.collapsing .nav-item.active .nav-link.active {

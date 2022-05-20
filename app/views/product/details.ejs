@@ -111,10 +111,13 @@
                 <img src="/uploads/<%= product.image %>" style="width: 200%;height: 100%" class="img-fluid" />
                 </div>
                 <h2><%= product.productName %></h2>
+                <label style="color: crimson; height: 5;"><%= product.price %> đ</label> - <%= product.area %> m²
+                <br>
+                <img src="/img/location.png" style="width: 3%;height: 2%"> <%= product.address %>
+                <br><br>
                 <p>
                     <%= product.detail %>
                 </p>
-                <br>
                 <img src="/img/area.png" style="width: 3%;height: 2%">Diện tích: <%= product.area %> m²
                 <br>
                 <i class="fa fa-shopping-cart" style="font-size:24px"aria-hidden="true"></i>
