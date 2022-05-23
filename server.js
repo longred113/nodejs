@@ -136,7 +136,7 @@ require('./app/routes/web.route')(app);
 require('./app/routes/admin.route')(app);
 require('./app/routes/product.route')(app);
 require('./app/routes/category.route')(app);
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Server running: http//localhost:3000');
 });
 
