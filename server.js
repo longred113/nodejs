@@ -136,7 +136,8 @@ require('./app/routes/web.route')(app);
 require('./app/routes/admin.route')(app);
 require('./app/routes/product.route')(app);
 require('./app/routes/category.route')(app);
-app.listen(process.env.PORT || 5000, function () {
-    console.log('Server running: http//localhost:5000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
