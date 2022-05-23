@@ -33,9 +33,9 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-// app.get('/', (req, res, next) => {
-//     res.render('index');
-// })
+app.get('/', (req, res, next) => {
+    res.render('index');
+})
 app.get('/admin', (req, res, next) => {
     res.render('adminIndex');
 })
@@ -136,7 +136,7 @@ require('./app/routes/web.route')(app);
 require('./app/routes/admin.route')(app);
 require('./app/routes/product.route')(app);
 require('./app/routes/category.route')(app);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
