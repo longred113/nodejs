@@ -22,7 +22,9 @@
     "method-override": "^3.0.0",
     "multer": "^1.4.4",
     "mysql": "^2.18.1",
-    "nodemailer": "^6.7.3"
+    "nodemailer": "^6.7.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4"
   },
   "repository": {
     "type": "git",

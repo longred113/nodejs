@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const postgres = require('pg');
 const dbConfig = require('../config/db.config');
 const connection = mysql.createConnection({
     host: dbConfig.HOST,
