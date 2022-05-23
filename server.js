@@ -33,9 +33,9 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-app.get('/', (req, res, next) => {
-    res.render('index');
-})
+// app.get('/', (req, res, next) => {
+//     res.render('index');
+// })
 app.get('/admin', (req, res, next) => {
     res.render('adminIndex');
 })
