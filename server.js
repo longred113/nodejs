@@ -136,7 +136,7 @@ require('./app/routes/web.route')(app);
 require('./app/routes/admin.route')(app);
 require('./app/routes/product.route')(app);
 require('./app/routes/category.route')(app);
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(process.env.PORT || 5000, function () {
+    console.log('Server running: http//localhost:5000');
 });
 
