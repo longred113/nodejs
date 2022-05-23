@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const postgres = require('pg');
 const dbConfig = require('../config/db.config');
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: dbConfig.HOST,
     user: dbConfig.USER,
     password: dbConfig.PASSWORD,
