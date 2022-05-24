@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const postgres = require('pg');
 const dbConfig = require('../config/db.config');
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
     host: dbConfig.HOST,
     user: dbConfig.USER,
     password: dbConfig.PASSWORD,
@@ -12,5 +12,6 @@ const connection = mysql.createConnection({
 //     if(error) throw error;
 //     console.log("successfully connected to the database");
 // })
+connection.query('select 1 + 1', (err, rows) => { /* */ });
 
 module.exports = connection;
