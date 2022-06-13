@@ -130,7 +130,6 @@ app.post('/image', (req,res) => {
 //     console.log(title)
 // });
 
-require('./app/routes/todo.route')(app);
 require('./app/routes/auth.route')(app);
 require('./app/routes/web.route')(app);
 require('./app/routes/admin.route')(app);
